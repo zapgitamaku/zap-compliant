@@ -1,0 +1,154 @@
+# Fetch Orders
+
+### GET /v1/orders <a href="#top" id="top"></a>
+
+Allows a site admin User to fetch all orders on the platform.
+
+#### HTTP Method <a href="#top" id="top"></a>
+
+GET
+
+## Sample Request <a href="#samplerequest" id="samplerequest"></a>
+
+The example below shows a request to get orders.
+
+#### **Sample request** URL <a href="#top" id="top"></a>
+
+```
+https://{hostname}/v1/orders?payout=false
+```
+
+#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+
+```
+'Content-Type: application/json'
+'Authorization: Bearer  <Bearer Token>'
+```
+
+## Request Header <a href="#samplerequest" id="samplerequest"></a>
+
+| Header        | Description                                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------- |
+| Content-type  | application/json                                                                                              |
+| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
+
+#### **Sample request query** <a href="#top" id="top"></a>
+
+<table><thead><tr><th width="242">Key</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td>bodyLimit</td><td>1</td><td>Optional query parameter that specifies the number of orders in the response body</td></tr><tr><td>pageLimit</td><td>3</td><td>Optional query parameter that paginates the list of orders in the response body</td></tr><tr><td>startDate</td><td></td><td>Optional query parameter that adds a start date range to the list of orders in the response body</td></tr><tr><td>endDate</td><td></td><td>Optional query parameter that adds a end date range to the list of orders in the response body</td></tr><tr><td>status</td><td>filled, successful, pending, failed or refunded</td><td>Optional query parameter that adds filter of order status to the list of orders in the response body</td></tr></tbody></table>
+
+## Response <a href="#samplerequest" id="samplerequest"></a>
+
+If successful, this operation returns HTTP status code 200, with information about the orders.
+
+### Sample Response <a href="#samplerequest" id="samplerequest"></a>
+
+The sample responses below shows successful completion of this operation.
+
+#### **Sample** Response Header <a href="#top" id="top"></a>
+
+```
+HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2023 23:14:31 GMT
+Content-Type: application/json; charset=utf-8
+```
+
+#### **Sample** Response Body <a href="#top" id="top"></a>
+
+```json
+{
+    "success": true,
+    "data": {
+        "orderData": [
+{
+        "userId": {
+            "name": "John Doe",
+            "email": "Doe@syxlabs.com",
+            "emailVerified": true,
+            "id": "647dea778238489ed1d5193b0a"
+        },
+        "amount": 10,
+        "targetAmount": 8272.8482269116,
+        "marketId": {
+            "baseCurrencyId": {
+                "name": "Binance-Testnet-Tether",
+                "ticker": "USDTBSC",
+                "contract": "0x337610d27c2392E347C9cD60BD4b3b107C9d31dDd",
+                "chainId": "97",
+                "isCrypto": true,
+                "icon": "https://res.cloudinary.com/dukkxbrbc/image/upload/v1684773224/image/tether.svg",
+                "id": "646369e1e9901ef59b49abea"
+            },
+            "targetCurrencyId": {
+                "name": "Nigerian Naira",
+                "ticker": "NGN",
+                "isCrypto": false,
+                "icon": "https://res.cloudinary.com/dutxbbrbc/image/upload/v1684998892/image/naira.svg",
+                "id": "646369e1e9981ef99b49abef"
+            },
+            "id": "646369e1e7123ef59b49abf8"
+        },
+        "withdrawalBankAccount": {
+            "bankId": {
+                "name": "OPAY",
+                "sortCode": "100004",
+                "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1683650610/image/1683650609169.png",
+                "id": "64afd58f177653c09d9a42f7"
+            },
+            "accountNumber": "8108681918",
+            "accountName": "DAVID UGOCHUKWU AMAKU",
+            "id": "64afdbf6ca8768ec953e3bf0e"
+        },
+        "rate": 827.28482269116,
+        "status": "pending",
+        "refundPublicKey": "0xbf1D43fD093E76c097C869bA21fB2c7B59440521",
+        "expiresAt": "2023-07-22T09:10:23.526Z",
+        "createdAt": "2023-07-22T08:40:23.540Z",
+        "updatedAt": "2023-07-22T08:40:25.434Z",
+        "depositPublicKey": "0xcbac504d471a60a405d380ecafa96770a3ff4992",
+        "id": "64bb95f7eeb410a6358b0c29"
+    }
+       ],
+        "bodyLimit": 1,
+        "pageLimit": 3,
+        "dataCount": 193
+    }
+}
+```
+
+### Response Headers <a href="#samplerequest" id="samplerequest"></a>
+
+| Headers      | Description      |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+### Response Body <a href="#samplerequest" id="samplerequest"></a>
+
+| Name      | Type  | Description                                          |
+| --------- | ----- | ---------------------------------------------------- |
+| OrderData | Order | Contains information about  Orders on ZAP  platform. |
+
+| Property              | Type     | Description                                                                                |
+| --------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| id                    | String   | The unique ID for a specific order. Used in Response                                       |
+| userId                | String   | The unique ID of the User.                                                                 |
+| amount                | Number   | The amount the User exchanges.                                                             |
+| marketId              | String   | The unique ID for a specific Market.                                                       |
+| withdrawalBankAccount | String   | The unique ID for a user's bank details                                                    |
+| depositBankAccount    | Object   | The deposit account number, account name and bankId                                        |
+| rate                  | String   | The rate at which the exchange is carried out                                              |
+| status                | String   | The status of the order.                                                                   |
+| refundPublicKey       | String   | The public address where the refund amount is credited                                     |
+| withdrawalPublicKey   | String   | The public address where the Zap sends crypto funds to                                     |
+| depositPublicKey      | String   | The public address where the user sends crypto funds to                                    |
+| createdAt             | dateTime | This property displays when the currency was created. Used only in response messages.      |
+| updatedAt             | dateTime | This property displays when the currency was last updated. Used only in response messages. |
+
+### Error Codes <a href="#samplerequest" id="samplerequest"></a>
+
+If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.
+
+| Item | Value                                   |
+| ---- | --------------------------------------- |
+| 404  | The resource could not be found.        |
+| 500  | An error occured processing the request |
+
