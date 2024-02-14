@@ -142,8 +142,6 @@
 * [Zap WaitList Service](zap-waitlist-service/README.md)
   * [Create New Waiting User](zap-waitlist-service/create-new-waiting-user.md)
   * [Fetch All Waiting Users](zap-waitlist-service/fetch-all-waiting-users.md)
-* [SyxLabs Website Services](syxlabs-website-services/README.md)
-  * [Contact Us (get in touch)](syxlabs-website-services/contact-us-get-in-touch.md)
 * [NOTIFICATION SERVICE](notification-service/README.md)
   * [Fetch System Notifications](notification-service/fetch-system-notifications.md)
   * [Fetch Security Notifications](notification-service/fetch-security-notifications.md)
