@@ -18,6 +18,8 @@ Your API requests are authenticated using API keys. Any request that doesn't inc
 
 You can generate an API key from your Dashboard at any time.
 
+**Base url**: [https://zap-business-test-375803245c70.herokuapp.com](https://zap-business-test-375803245c70.herokuapp.com)
+
 {% hint style="info" %}
 **Good to know:**
 
