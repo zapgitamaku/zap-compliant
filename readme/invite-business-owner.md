@@ -22,6 +22,7 @@ https://{hostname}/v1/owner/invite
 
 ```javascript
 'Content-Type: application/json'
+'Authorization: Bearer  <Bearer Token>'
 ```
 
 #### **Sample request body** <a href="#top" id="top"></a>

@@ -1,8 +1,8 @@
-# Fetch Business User By Id
+# Fetch Business Owner By Token
 
-### GET /v1/business/:id <a href="#top" id="top"></a>
+### GET /v1/business/token/:token <a href="#top" id="top"></a>
 
-Allows the Site Admin to get a business user on the platform.
+Allows the Site Admin to get a business owner on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,28 +10,40 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specified business user.
+The example below shows a request to fetch a specified business owner.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/:id
+https://{hostname}/v1/business/token/:token
 ```
 
-#### **Sample request headers** <a href="#top" id="top"></a>
+### **Sample request headers** <a href="#top" id="top"></a>
 
-```javascript
+```
 'Content-Type: application/json'
 'Authorization: Bearer  <Bearer Token>'
 ```
 
+#### For Invited Owners: <a href="#top" id="top"></a>
+
+```
+'owner-auth: 63e0f4da81979dcc3b9ee123-1c927684-066d-4c2c-b5c5-a4995f040618'
+```
+
+## Request Parameter <a href="#samplerequest" id="samplerequest"></a>
+
+| Paramater | Description                                                                                                                       |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| token     | If its an invited owner, the owner token can be gotten from the splitting of the owner auth ( the 2nd  value in the split array). |
+
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="241">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
+<table><thead><tr><th width="204">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr><tr><td>owner-auth</td><td>This is the token sent along the invitation link and should be used when invited owner are interacting with platform.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with a business.
+If successful, this operation returns HTTP status code 200, with a owner.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -53,27 +65,15 @@ Content-Type: application/json; charset=utf-8
     "data": {
         "firstName": "john",
         "lastName": "doe",
+        "businessId": "65c4e4945d2869e8324210d8",
         "email": "johndoe@gmail.com",
         "phoneNumber": "2347030839847",
-        "phoneNumberVerified": false,
-        "password": "$2b$10$5zrcihvQ0yJA.i25cvShAOe9qLgh3RwugP.nln/hZPrl/CD281a8O",
         "bvn": {
-            "bvnVerified": false
+            "bvnVerified": true
         },
-        "businessName": "Space stocks",
-        "numberOfBusinessOwner": 0,
-        "numberOfBusinessOwnerFullyVerified": 0,
-        "iPAddress": [],
-        "emailVerified": false,
-        "twoFA": {
-            "enabled": false
-        },
-        "userAgent": [],
-        "receiveEmailNotifications": true,
-        "transactionVolume": 0,
         "createdAt": "2024-02-08T14:26:28.121Z",
         "updatedAt": "2024-02-08T14:26:28.121Z",
-        "id": "65c4e4945d2869e8324210d8"
+        "id": "65c4e445d2869k342421927"
     }
 }
 ```
@@ -86,9 +86,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name     | Type   | Description                                           |
-| -------- | ------ | ----------------------------------------------------- |
-| business | Object | Contains information about the ZAP platform business. |
+| Name  | Type   | Description                                                  |
+| ----- | ------ | ------------------------------------------------------------ |
+| owner | Object | Contains information about the ZAP platform business  owner. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

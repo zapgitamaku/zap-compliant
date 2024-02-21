@@ -27,11 +27,10 @@ https://{hostname}/v1/business/upload
 
 #### **Sample request body - form data** <a href="#top" id="top"></a>
 
-```json
-{
-      "doc": cac.pdf
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong>      "doc": cac.pdf
 }
-```
+</code></pre>
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 

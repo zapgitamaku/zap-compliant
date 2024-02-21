@@ -1,8 +1,8 @@
-# Verify Business TIN
+# Verify Business User
 
-### PUT /v1/verifications/details <a href="#top" id="top"></a>
+### PUT /v1/verifications/documents <a href="#top" id="top"></a>
 
-Allows the Site Admin to verify their business TIN  to the platform.
+Allows the Site Admin to submit business user verification documents on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to verify a business tin.
+The example below shows a request to submit verification documents.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/verifications/details
+https://{hostname}/v1/verifications/documents
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -30,8 +30,10 @@ https://{hostname}/v1/verifications/details
 ```json
 {
     "businessId": "65c4e6422b8ca01c66b51110",
-    "tinNumber": "1239211234910001",
-    "isTIN": true
+    "utilityUrl": "https://amazon.s3.bucket/19093848293444",
+    "utilityType": "electricity",
+    "coiUrl": "https://amazon.s3.bucket/19093848293444",
+    "efdUrl": "https://amazon.s3.bucket/19093848293444"
 }
 ```
 
@@ -44,23 +46,25 @@ https://{hostname}/v1/verifications/details
 
 ## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="140">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>Verification</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business tin. businessId, tinNumber and isTin are required.</td></tr></tbody></table>
+<table><thead><tr><th width="140">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>Verification</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business user. All payload fields are required.</td></tr></tbody></table>
 
 #### Business Object
 
-Contains information about ZAP's platform business verification.
+Contains information about ZAP's platform business.
 
 The properties included in the **Verification** object are listed below. All properties are **required** in the request message.
 
-| Property   | Type    | Description                                  |
-| ---------- | ------- | -------------------------------------------- |
-| businessId | string  | The unique business user id.                 |
-| tinNumber  | string  | The business user tax identification number. |
-| isTin      | boolean | identifier that indicates its a tin          |
+| Property    | Type   | Description                                       |
+| ----------- | ------ | ------------------------------------------------- |
+| businessId  | string | The unique business user id.                      |
+| utilityUrl  | string | The business user uploaded utility bill URL.      |
+| utilityType | string | The type of the uploaded utility bill             |
+| coiUrl      | string | The uploaded corporate incorporation document URL |
+| efdUrl      | string | The executive document URL                        |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about the logged in business verification.
+If successful, this operation returns HTTP status code 200, with information about the logged in business.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
