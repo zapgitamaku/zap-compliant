@@ -1,8 +1,8 @@
-# Create Business Owner
+# Verify Business Owner
 
-### POST /v1/owner <a href="#top" id="top"></a>
+### POST /v1/owner/verify <a href="#top" id="top"></a>
 
-Allows the Site Admin to add a new business  owner to the platform.
+Allows the Site Admin to add verify business  owner ID details to the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,39 +10,42 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to create a business owner.
+The example below shows a request to verify a business owner ID.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/owner
+https://{hostname}/v1/owner/verify
 ```
 
-#### **Sample request headers** <a href="#top" id="top"></a>
+### **Sample request headers** <a href="#top" id="top"></a>
 
-```javascript
+```
 'Content-Type: application/json'
 'Authorization: Bearer  <Bearer Token>'
+```
+
+#### For Invited Owners: <a href="#top" id="top"></a>
+
+```
+'owner-auth: 63e0f4da81979dcc3b9ee123-1c927684-066d-4c2c-b5c5-a4995f040618'
 ```
 
 #### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
+it takes both file data and body data
+
+{
+      "image": nin.jpg
+}
+
 {
     "businessId": "65c4e4945d2869e8324210d8",
-    "firstName": "john",
-    "lastName": "doe",
-    "email": "johndoe@gmail.com",
-    "phoneNumber": "2347030839847",
-    "gender": "male",
-    "nationality": "nigerian",
-    "role": "shareholder"
-    "bvn": "12345567788",
-    "state": "lagos",
-    "city": "ikeja",
-    "country": "nigeria",
-    "address": "no,1 3j33",
-    "dob": "1980-08-12"
+    "ownerId": "65c4e4k3942869e8324k3028",
+    "documentType": "ID",
+    "documentIdType": "vNIN"
+    "documentID": "882aa2lp34fa1099",
 }
 ```
 
@@ -54,11 +57,15 @@ https://{hostname}/v1/owner
 | Authorization | This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login. |
 | owner-auth    | This is the token sent along the invitation link and should be used when invited owner are interacting with platform.   |
 
+## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
+
+<table><thead><tr><th width="99">Parameter</th><th width="91">Parm Type</th><th width="75">Data Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>image</td><td>Body</td><td>file</td><td>Required</td><td> jpg and png file formats supported</td></tr></tbody></table>
+
 ## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
 <table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>Owner</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business owner. firstName, lastName, email, businessId, dob, gender, role, nationality, bvn,  and phoneNumber are required.</td></tr></tbody></table>
 
-#### Business Object
+#### Business Owner
 
 Contains information about ZAP's platform business owner.
 
