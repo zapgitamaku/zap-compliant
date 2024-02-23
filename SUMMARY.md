@@ -14,6 +14,8 @@
   * [Verify Business Owner](readme/create-business-owner.md)
   * [Invite Business Owner](readme/invite-business-owner.md)
   * [Fetch Business Owner By Token](readme/fetch-business-owner-by-token.md)
+  * [Verify OTP](readme/verify-otp.md)
+  * [Resend OTP](readme/resend-otp.md)
 * [Dashboard](dashboard.md)
 * [Payment Links](payment-links.md)
 * [Settings](settings.md)
