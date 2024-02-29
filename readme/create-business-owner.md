@@ -21,7 +21,7 @@ https://{hostname}/v1/owner/verify
 ### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
-'Content-Type: application/json'
+'Content-Type: multipart/form-data'
 'Authorization: Bearer  <Bearer Token>'
 ```
 
