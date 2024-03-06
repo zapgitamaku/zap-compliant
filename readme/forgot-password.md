@@ -1,8 +1,10 @@
-# Verify 2 Factor Authentication
+# Forgot Password
 
-### POST /v1/business/verify2fa/:id <a href="#top" id="top"></a>
+### POST /v1/business/forgotPassword <a href="#top" id="top"></a>
 
-Allows the Zap business user to verify 2FA on the platform..
+
+
+Allows the Zap business user to receive an email to initiate password reset..
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +12,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to verify 2FA.
+The example below shows a request to initiate password reset.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/verify2fa/:id
+https://{hostname}/v1/business/forgotPassword
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -33,21 +35,35 @@ https://{hostname}/v1/business/verify2fa/:id
 
 ```json
 {
-    "token": "890478"
+    "email":"johndoe@example.com"
 }
 ```
 
-## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
+## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Key | Value | Description                             |
-| --- | ----- | --------------------------------------- |
-| Id  | \<id> | The unique ID of the ZAP business user. |
+| Parameter | Parameter Type | Data Type | Required | Description                                                                                     |
+| --------- | -------------- | --------- | -------- | ----------------------------------------------------------------------------------------------- |
+| Business  | Body           | Object    | Required | Contains information about ZAP platform business owner. Business User unique email is required. |
+
+### Business Object <a href="#samplerequest" id="samplerequest"></a>
+
+Contains information about ZAP's platform business
+
+The properties included in the **Business** object are listed below. All properties are **required** in the request message.
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
 If successful, this operation returns HTTP status code 200, with a 2FA details.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
+
+The sample responses below shows successful completion of this operation.
+
+| Property | Type   | Description                                                                                         |
+| -------- | ------ | --------------------------------------------------------------------------------------------------- |
+| email    | String | <p>The business user unique email address.</p><p>Max length: 320 chars. Standard email pattern.</p> |
+
+### Sample Response
 
 The sample responses below shows successful completion of this operation.
 
@@ -64,7 +80,10 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "Token verified successfully"
+    "data": {
+        "token": "token data",
+        "message": "Please check your email to continue password reset"
+    }
 }
 ```
 
@@ -73,12 +92,6 @@ Content-Type: application/json; charset=utf-8
 | Headers      | Description      |
 | ------------ | ---------------- |
 | Content-Type | application/json |
-
-### Response Body <a href="#samplerequest" id="samplerequest"></a>
-
-| Name | Type   | Description                  |
-| ---- | ------ | ---------------------------- |
-| 2FA  | Object | Contains the success message |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

@@ -64,18 +64,7 @@ Contains information about ZAP's platform business owner.
 
 The properties included in the **Owner** object are listed below. All properties are **required** in the request message.
 
-| Property    | Type   | Description                                                                                                    |
-| ----------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| businessId  | string | The unique id of the business user.                                                                            |
-| firstName   | string | The business owner first name                                                                                  |
-| lastName    | string | The business owner last name.                                                                                  |
-| email       | string | <p>The business owner unique email address.</p><p>Max length: 320 chars. Standard email pattern.</p>           |
-| role        | string | The owner role.                                                                                                |
-| bvn         | string | The owner bvn                                                                                                  |
-| nationality | string | The owner nationality                                                                                          |
-| phoneNumber | string | <p>The business owner phone number.<br>Max length: 15 chars plus country code.<br>Must start with "+" sign</p> |
-| dob         | string | The dob of the  owner                                                                                          |
-| gender      | string | The gender of the owner                                                                                        |
+<table><thead><tr><th>Property</th><th width="211">Type</th><th>Description</th></tr></thead><tbody><tr><td>businessId</td><td>string</td><td>The unique id of the business user.</td></tr><tr><td>firstName</td><td>string</td><td>The business owner first name</td></tr><tr><td>lastName</td><td>string</td><td>The business owner last name.</td></tr><tr><td>email</td><td>string</td><td><p>The business owner unique email address.</p><p>Max length: 320 chars. Standard email pattern.</p></td></tr><tr><td>role</td><td>string</td><td>The owner role.</td></tr><tr><td>bvn</td><td>string</td><td>The owner bvn</td></tr><tr><td>nationality</td><td>string</td><td>The owner nationality</td></tr><tr><td>phoneNumber</td><td>string</td><td>The business owner phone number.<br>Max length: 15 chars plus country code.<br>Must start with "+" sign</td></tr><tr><td>dob</td><td>string</td><td>The dob of the  owner</td></tr><tr><td>gender</td><td>string</td><td>The gender of the owner</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 

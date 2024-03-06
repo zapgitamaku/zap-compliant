@@ -1,8 +1,10 @@
-# Verify 2 Factor Authentication
+# Reset Password
 
-### POST /v1/business/verify2fa/:id <a href="#top" id="top"></a>
+### POST /v1/business/auth <a href="#top" id="top"></a>
 
-Allows the Zap business user to verify 2FA on the platform..
+
+
+Allows the Zap business user to reset password.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +12,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to verify 2FA.
+The example below shows a request to initiate password reset.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/verify2fa/:id
+https://{hostname}/v1/business/auth?token="$tokendata"
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -29,25 +31,49 @@ https://{hostname}/v1/business/verify2fa/:id
 
 <table><thead><tr><th width="241">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
 
+## Request Query
+
+
+
+| Property | Type   | Description                           |
+| -------- | ------ | ------------------------------------- |
+| token    | String | Hashed token from the backend server. |
+
 #### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
-    "token": "890478"
+    "identity":"john@example.com",
+    "newPassword": "newP@ssw0rd"
 }
 ```
 
-## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
+## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Key | Value | Description                             |
-| --- | ----- | --------------------------------------- |
-| Id  | \<id> | The unique ID of the ZAP business user. |
+| Parameter | Parameter Type | Data Type | Required | Description                                                                                     |
+| --------- | -------------- | --------- | -------- | ----------------------------------------------------------------------------------------------- |
+| Business  | Body           | Object    | Required | Contains information about ZAP platform business owner. Business User unique email is required. |
+
+### Business Object <a href="#samplerequest" id="samplerequest"></a>
+
+Contains information about ZAP's platform business
+
+The properties included in the **Business** object are listed below. All properties are **required** in the request message.
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
 If successful, this operation returns HTTP status code 200, with a 2FA details.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
+
+The sample responses below shows successful completion of this operation.
+
+| Property    | Type   | Description                                                                                                                                     |
+| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| identity    | String | <p>The business user unique identity (email address).</p><p>Max length: 320 chars. Standard email pattern.</p>                                  |
+| newPassword | String | <p>The business user password.</p><p>Must contain at least one digit and one special character and it should be between 8 to 30 characters.</p> |
+
+### Sample Response
 
 The sample responses below shows successful completion of this operation.
 
@@ -64,7 +90,9 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "Token verified successfully"
+    "data": {
+        "data": "Password reset successfully"
+    }
 }
 ```
 
@@ -73,12 +101,6 @@ Content-Type: application/json; charset=utf-8
 | Headers      | Description      |
 | ------------ | ---------------- |
 | Content-Type | application/json |
-
-### Response Body <a href="#samplerequest" id="samplerequest"></a>
-
-| Name | Type   | Description                  |
-| ---- | ------ | ---------------------------- |
-| 2FA  | Object | Contains the success message |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
