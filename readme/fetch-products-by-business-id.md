@@ -1,8 +1,8 @@
-# Fetch Business Owner By Token
+# Fetch Products By Business Id
 
-### GET /v1/business/token/:token <a href="#top" id="top"></a>
+### GET /v1/product/business/:businessId <a href="#top" id="top"></a>
 
-Allows the Site Admin to get a business owner on the platform.
+Allows the Zap Business User to get all their products
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specified business owner.
+The example below shows a request to fetch business products.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/token/:token
+https://{hostname}/v1/product/business/:businessId
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,9 +25,10 @@ https://{hostname}/v1/business/token/:token
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### For invited owner: <a href="#top" id="top"></a>
+#### For Invited Owners: <a href="#top" id="top"></a>
 
 ```
+Content-Type: application/json'
 'owner-auth: 63e0f4da81979dcc3b9ee123-1c927684-066d-4c2c-b5c5-a4995f040618'
 ```
 
