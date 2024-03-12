@@ -8,7 +8,7 @@ description: >-
 
 
 
-### POST /v1/key <a href="#top" id="top"></a>
+### PUT /v1/key <a href="#top" id="top"></a>
 
 Allows the Business Users to create a new business key management on the platform.
 
