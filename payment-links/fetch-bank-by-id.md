@@ -1,8 +1,8 @@
-# Fetch Products
+# Fetch Bank By Id
 
-### GET /v1/product/business/:businessId <a href="#top" id="top"></a>
+### GET /v1/banks/:id <a href="#top" id="top"></a>
 
-Allows the Site Admin to get business products on the platform or zap pay.
+Allows the Site Admin to get an available bank on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch specified business user products.
+The example below shows a request to fetch a specified bank.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/product/business/:businessId
+https://{hostname}/v1/banks/:id
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,22 +25,15 @@ https://{hostname}/v1/product/business/:businessId
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### For invited owner: <a href="#top" id="top"></a>
-
-```
-'Content-Type: application/json'
-api-key: wjjmaesvms37w30sdoneox2l3homvbytlhf320s2
-```
-
 ## Request Parameter <a href="#samplerequest" id="samplerequest"></a>
 
-| Paramater  | Description                         |
-| ---------- | ----------------------------------- |
-| businessId | The unique id of the business user. |
+| Paramater | Description                |
+| --------- | -------------------------- |
+| id        | The unique id of the bank. |
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="182">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr><tr><td>api-key</td><td>This is the api key for the zap pay communication with the platform.</td></tr></tbody></table>
+<table><thead><tr><th width="182">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -63,18 +56,14 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": [
-     {
-        "businessId": "65e71840973f0e97fb99849d",
-        "name": "test Product",
-        "description": "testing product",
-        "image": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1709659340/business-verification-production/45e61817-b8c4-446c-8513-b74728a79bf9.png",
-        "price": 1000,
-        "createdAt": "2024-03-05T17:22:22.175Z",
-        "updatedAt": "2024-03-05T17:22:22.175Z",
-        "id": "65e754ce2b2a2d15c1dadca7"
-     }
-  ]
+    "data": {
+        "name": "3LINE CARD MANAGEMENT LIMITED",
+        "sortCode": "123456",
+        "icon": "https://res.cloudinary.com/name/image/upload/v123456/icons/1689243127796.png",
+        "createdAt": "2023-07-13T10:44:31.786Z",
+        "updatedAt": "2023-08-01T12:01:45.074Z",
+        "id": "64afd58f177653c33d9a4220"
+    }
 }
 ```
 
@@ -86,9 +75,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name    | Type   | Description                                            |
-| ------- | ------ | ------------------------------------------------------ |
-| product | Object | Contains information about the ZAP business  products. |
+| Name  | Type   | Description                          |
+| ----- | ------ | ------------------------------------ |
+| banks | Object | Contains information about the bank. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

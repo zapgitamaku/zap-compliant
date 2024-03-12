@@ -1,21 +1,21 @@
-# Create Product
+# Update Payment Status By Id
 
-### POST /v1/product <a href="#top" id="top"></a>
+### PUT /v1/payment/:id <a href="#top" id="top"></a>
 
-Allows the Site Admin and zap pay business to add products to the platform.
+Allows only the Site Admin to update payment status by id on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-POST
+PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to add a new product.
+The example below shows a request to update a business payment.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/product
+https://{hostname}/v1/payment/status/:id
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,25 +25,11 @@ https://{hostname}/v1/product
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### For zap pay: <a href="#top" id="top"></a>
-
-```
-'Content-Type: multipart/form-data'
-'api-key: wjjmaesvms37w30sdoneox2l3homvbytlhf320s2
-```
-
 #### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
-it takes both file data and body data
-
 {
-    "image": productImage.jpg
-    
-    "businessId": "65c4e4945d2869e8324210d8",
-    "price": 2000,
-    "name": "test",
-    "description": "test product"
+    "active" : false
 }
 ```
 
@@ -53,32 +39,28 @@ it takes both file data and body data
 | ------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Content-type  | application/json                                                                                                        |
 | Authorization | This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login. |
-| api-key       | This is the api key for the zap pay communication with the platform.                                                    |
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="99">Parameter</th><th width="91">Parm Type</th><th width="75">Data Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>image</td><td>Body</td><td>file</td><td>Required</td><td> jpg and png file formats supported</td></tr></tbody></table>
+<table><thead><tr><th width="99">Parameter</th><th width="91">Parm Type</th><th width="75">Data Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Params</td><td></td><td>Required</td><td>unique product id</td></tr></tbody></table>
 
 ## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>Product</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business owner. businessId, price, name, description.</td></tr></tbody></table>
+<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>Payment</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform payment. active, is required..</td></tr></tbody></table>
 
 #### Business Product
 
-Contains information about ZAP's business product.
+Contains information about ZAP's  payment.
 
-The properties included in the **Product** object are listed below. All properties are **required** in the request message.
+The properties included in the **Payment** object are listed below. All properties are **required** in the request message.
 
-| Property    | Type   | Description                         |
-| ----------- | ------ | ----------------------------------- |
-| businessId  | string | The unique id of the business user. |
-| name        | string | The product  name                   |
-| description | string | The product description.            |
-| price       | number | The price of the product.           |
+| Property | Type    | Description         |
+| -------- | ------- | ------------------- |
+| active   | boolean | The payment status. |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 201, with information about the newly created business product.
+If successful, this operation returns HTTP status code 200, with information about the newly created Payment.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -98,14 +80,26 @@ Content-Type: application/json; charset=utf-8
 {
     "success": true,
     "data": {
-        "businessId": "65e71840973f0e97fb99849d",
-        "name": "test Product",
-        "description": "testing product",
-        "image": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1709659340/business-verification-production/45e61817-b8c4-446c-8513-b74728a79bf9.png",
-        "price": 1000,
-        "createdAt": "2024-03-05T17:22:22.175Z",
-        "updatedAt": "2024-03-05T17:22:22.175Z",
-        "id": "65e754ce2b2a2d15c1dadca7"
+        "businessId": "65eef259501d4e3cbc2cff1d",
+        "productId": [
+            "65f0283b76a7659c692808ec",
+            "65f027d28ad58339210ce254",
+            "65f0281ab34eff81de0cd16c"
+        ],
+        "settlementBankDetails": "65ef09e8e3c4c66cdc380afd",
+        "description": "test payment",
+        "paymentType": "oneTime",
+        "paymentLink": "https://pay.business.zap.africa/eapq1k36ku",
+        "paymentToken": "eapq1k36ku",
+        "customerId": [],
+        "amount": 927,
+        "deliverReceipt": true,
+        "isApi": false,
+        "status": "inactive",
+        "isDeleted": false,
+        "createdAt": "2024-03-12T10:09:49.339Z",
+        "updatedAt": "2024-03-12T11:52:14.009Z",
+        "id": "65f029ed76a7659c692808f8"
     }
 }
 ```
