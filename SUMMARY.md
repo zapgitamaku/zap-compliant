@@ -7,6 +7,7 @@
   * [Log In Business](readme/log-in-business.md)
   * [Verify Business TIN](readme/verify-business-tin.md)
   * [Fetch Business User By Id](readme/fetch-business-user-by-id.md)
+  * [Fetch Dropdown Options](readme/fetch-dropdown-options.md)
   * [More Business Details After SignUp](readme/more-business-details-after-signup.md)
   * [Verify Business User](readme/verify-business-user.md)
   * [Upload Business Document Each](readme/upload-business-document-each.md)
