@@ -1,8 +1,8 @@
-# Delete Payment by Id
+# Delete Key by Id
 
-### PUT /v1/payment/delete/:id <a href="#top" id="top"></a>
+### PUT /v1/key/delete/:id <a href="#top" id="top"></a>
 
-Allows only the Site Admin to delete business user payment link on the platform.
+Allows only the Site Admin to delete business user key on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to delete a payment details.
+The example below shows a request to delete a key.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/payment/delete/:id
+https://{hostname}/v1/key/delete/:id
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -31,9 +31,9 @@ https://{hostname}/v1/payment/delete/:id
 
 
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| id        | The unique id of the Payment. |
+| Parameter | Description               |
+| --------- | ------------------------- |
+| id        | The unique id of the Key. |
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
@@ -63,7 +63,7 @@ Content-Type: application/json; charset=utf-8
 ```
 {
     "success": true,
-    "data": "Business payment link deleted successfully!"
+    "data": "Key Details deleted successfully"
 }
 ```
 

@@ -14,7 +14,7 @@ Allows the Business Users to create a new business key management on the platfor
 
 #### HTTP Method
 
-POST
+PUT
 
 ### Sample Request
 
