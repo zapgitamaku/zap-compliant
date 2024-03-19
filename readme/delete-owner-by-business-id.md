@@ -1,21 +1,21 @@
-# Fetch Bank Details
+# Delete Owner By Business Id
 
-### GET /v1/bankdetails <a href="#top" id="top"></a>
+### DELETE /v1/owner/:id <a href="#top" id="top"></a>
 
-Allows the Site Admin to get an business user bank details on the platform.
+Allows the Zap Business User to delete business owner
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-GET
+DELETE
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch all banks.
+The example below shows a request to delete business owner.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/bankdetails
+https://{hostname}/v1/owner/:id
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,13 +25,19 @@ https://{hostname}/v1/bankdetails
 'Authorization: Bearer  <Bearer Token>'
 ```
 
+## Request Parameter <a href="#samplerequest" id="samplerequest"></a>
+
+| Paramater | Description                  |
+| --------- | ---------------------------- |
+| ownerId   | The business owner unique id |
+
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="182">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
+<table><thead><tr><th width="204">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with a owner.
+If successful, this operation returns HTTP status code 200, with a success message.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -50,49 +56,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-        "businessBankDetailsData": [
-            {
-                "bankId": {
-                    "name": "3LINE CARD MANAGEMENT LIMITED",
-                    "sortCode": "123456",
-                    "icon": "https://res.cloudinary.com/name/image/upload/v1689243128/icons/1689243127796.png",
-                    "id": "64afd58f177653c33d9a4220"
-                },
-                "businessId": {
-                    "businessName": "John Ltd.",
-                    "id": "65eef259501d4e3cbc2cff1d"
-                },
-                "accountNumber": "1234567890",
-                "accountName": "JOHN DOE ANONYMOUS",
-                "primaryAccount": true,
-                "createdAt": "2024-03-11T12:16:20.698Z",
-                "updatedAt": "2024-03-11T12:16:20.698Z",
-                "id": "65eef614cf9c648ad9b69ba0"
-            },
-            {
-                "bankId": {
-                    "name": "9 PAYMENT SOLUTIONS BANK",
-                    "sortCode": "123456",
-                    "icon": "https://res.cloudinary.com/name/image/upload/v1683654423/image/1683654422041.png",
-                    "id": "64afd58f177653c33d9a4221"
-                },
-                "businessId": {
-                    "businessName": "James Ltd.",
-                    "id": "65eef259501d4e3cbc2cff1d"
-                },
-                "accountNumber": "1234567890",
-                "accountName": "JANET DOE ANONYMOUS",
-                "primaryAccount": false,
-                "createdAt": "2024-03-11T13:40:56.889Z",
-                "updatedAt": "2024-03-11T13:40:56.889Z",
-                "id": "65ef09e8e3c4c66cdc380afd"
-            }
-        ],
-        "bodyLimit": 10,
-        "pageLimit": 1,
-        "dataCount": 2
-    }
+    "data": "Business Owner Deleted Successfully"
 }
 ```
 
@@ -104,9 +68,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name        | Type  | Description                                      |
-| ----------- | ----- | ------------------------------------------------ |
-| bankDetails | Array | Contains information about list of bank details. |
+| Name  | Type   | Description                                |
+| ----- | ------ | ------------------------------------------ |
+| owner | Object | Contains success message of deleted owner. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

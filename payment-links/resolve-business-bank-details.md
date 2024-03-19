@@ -1,8 +1,8 @@
-# Create Business Bank Details
+# Resolve Business Bank Details
 
-### POST /v1/bankdetails <a href="#top" id="top"></a>
+### POST /v1/bankdetails/resolve <a href="#top" id="top"></a>
 
-Allows the Site Admin to add business bank details to the platform.
+Allows the Site Admin to resolve business bank details to the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to add a new business bank details.
+The example below shows a request to resolve a business bank details.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/bankdetails
+https://{hostname}/v1/bankdetails/resolve
 ```
 
 ### **Sample request headers** <a href="#top" id="top"></a>
@@ -29,9 +29,7 @@ https://{hostname}/v1/bankdetails
 
 ```json
 {
-    "businessId":"65eef259501d4e3cbc2cff1d",
     "accountNumber":"1234567890",
-    "accountName":"JOHN DOE ANONYMOUS",
     "bankId":"64afd58f177653c33d9a4220"
 }
 ```
@@ -45,7 +43,7 @@ https://{hostname}/v1/bankdetails
 
 ## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>BankDetails</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business owner. businessId, accountName, accountNumber, bankId are required.</td></tr></tbody></table>
+<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>BankDetails</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business bank details. accountNumber, bankId are required.</td></tr></tbody></table>
 
 #### Business Product
 
@@ -55,8 +53,6 @@ The properties included in the **BankDetails** object are listed below. All prop
 
 | Property      | Type   | Description                           |
 | ------------- | ------ | ------------------------------------- |
-| businessId    | string | The unique id of the business user.   |
-| accountName   | string | The business user's account  name     |
 | accountNumber | string | The  business user's account  number. |
 | bankId        | number | The bank id.                          |
 
@@ -81,24 +77,7 @@ Content-Type: application/json; charset=utf-8
 ```
 {
     "success": true,
-    "data": {
-        "bankId": {
-            "name": "9 PAYMENT SOLUTIONS BANK",
-            "sortCode": "123456",
-            "icon": "https://res.cloudinary.com/name/image/upload/v1683654423/image/1683654422041.png",
-            "id": "64afd58f177653c33d9a4221"
-        },
-        "businessId": {
-            "businessName": "John Ltd.",
-            "id": "65eef259501d4e3cbc2cff1d"
-        },
-        "accountNumber": "1234567890",
-        "accountName": "JOHN DOE ANONYMOUS",
-        "primaryAccount": false,
-        "createdAt": "2024-03-11T13:40:56.889Z",
-        "updatedAt": "2024-03-11T13:40:56.889Z",
-        "id": "65ef09e8e3c4c66cdc380afd"
-    }
+    "data": "John Doe"
 }
 ```
 
@@ -108,5 +87,5 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 
 | Item | Value                                                                                                                                                                                                                                                                                                                             |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
+| 400J | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
