@@ -45,7 +45,7 @@ it takes both file data and body data
     "ownerId": "65c4e4k3942869e8324k3028",
     "documentType": "ID",
     "documentIdType": "vNIN"
-    "documentID": "882aa2lp34fa1099",
+    "documentId": "882aa2lp34fa1099",
 }
 ```
 
