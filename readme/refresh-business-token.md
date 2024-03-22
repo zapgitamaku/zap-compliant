@@ -1,8 +1,8 @@
-# Log In Business
+# Refresh Business Token
 
-### POST /v1/business/login <a href="#top" id="top"></a>
+### POST /v1/business/refreshToken <a href="#top" id="top"></a>
 
-Allows the Site Admin to log a business  to the platform.
+Allows the Site Admin to refresh the logged in user token for access  to the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to login a business.
+The example below shows a request to refresh business access token
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/login
+https://{hostname}/v1/business/refreshToken
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -28,10 +28,7 @@ https://{hostname}/v1/business/login
 
 ```json
 {
-     "email": "myemailaddress@myemail.com",
-    "password": "Syx@goal63",
-    "twoFaToken": "893874",
-    "isApp": true
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpZGVvbkB6YXAuYWZyaWNhIiwiaWQiOiI2NWYxZmZiOTQ1M2NjYTc0MjFkZDA4ZmIiLCJpYXQiOjE3MTEwOTkwOTgsImV4cCI6MTcxMTE4NTQ5OH0.XfqajLiSU3tfyEl-GG_gwV82NLvp8FuVE0k9t9VbT2c"
 }
 ```
 
@@ -43,7 +40,7 @@ https://{hostname}/v1/business/login
 
 ## Request Body <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>Business</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business. email, password are required.</td></tr></tbody></table>
+<table><thead><tr><th width="122">Parameter</th><th width="73">Param Type</th><th width="86">Data Type</th><th width="100">Required</th><th>Description</th></tr></thead><tbody><tr><td>Business</td><td>Body</td><td>Object</td><td>Required</td><td>Contains information about ZAP platform business. refreshToken, is required.</td></tr></tbody></table>
 
 #### Business Object
 
@@ -51,10 +48,9 @@ Contains information about ZAP's platform business.
 
 The properties included in the **Business** object are listed below. All properties are **required** in the request message.
 
-| Property | Type   | Description                                                                                                                                     |
-| -------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| email    | string | <p>The business user unique email address.</p><p>Max length: 320 chars. Standard email pattern.</p>                                             |
-| password | string | <p>The business user password.</p><p>Must contain at least one digit and one special character and it should be between 8 to 30 characters.</p> |
+| Property     | Type   | Description                             |
+| ------------ | ------ | --------------------------------------- |
+| refreshToken | string | The business user refresh access token. |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -78,42 +74,7 @@ Content-Type: application/json; charset=utf-8
 {
     "success": true,
     "data": {
-        "bvn": {
-            "bvnVerified": true
-        },
-        "twoFA": {
-            "secret": "PBPGCP2NKF3EATB6OJJHSW2FIF4DC5TN",
-            "enabled": true
-        },
-        "firstName": "stephen",
-        "lastName": "gideon",
-        "email": "gideon@zap.africa",
-        "phoneNumber": "2347030839847",
-        "phoneNumberVerified": false,
-        "businessName": "erick solutionz",
-        "numberOfBusinessOwner": 1,
-        "numberOfBusinessOwnerFullyVerified": 1,
-        "iPAddress": [
-            "::1"
-        ],
-        "emailVerified": true,
-        "userAgent": [
-            "PostmanRuntime/7.37.0"
-        ],
-        "receiveEmailNotifications": true,
-        "transactionVolume": 0,
-        "createdAt": "2024-03-13T19:34:17.599Z",
-        "updatedAt": "2024-03-22T09:31:53.402Z",
-        "verification": "65f1ffbb453cca7421dd08fd",
-        "cacBusinessName": "ERICK SOLUTIONS",
-        "address": "12B ADEWUSI",
-        "businessIndustry": "Agriculture",
-        "businessType": "Sole Proprietorship",
-        "city": "ABA",
-        "state": "Abia",
-        "id": "65f1ffb9453cca7421dd08fb",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpZGVvbkB6YXAuYWZyaWNhIiwiaWQiOiI2NWYxZmZiOTQ1M2NjYTc0MjFkZDA4ZmIiLCJpYXQiOjE3MTEwOTk5NjUsImV4cCI6MTcxMTE4NjM2NX0.9qD-6Hsjd0wiM5NFkIPLz8juMwaADZ8z142jKiG2aZg",
-        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpZGVvbkB6YXAuYWZyaWNhIiwiaWQiOiI2NWYxZmZiOTQ1M2NjYTc0MjFkZDA4ZmIiLCJpYXQiOjE3MTEwOTk5NjUsImV4cCI6MTcxODg3NTk2NX0.Jf4bsWDthuIvHnYdwrHJ6_7piAQIzMOxTGwE0MFBj7k"
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpZGVvbkB6YXAuYWZyaWNhIiwiaWQiOiI2NWYxZmZiOTQ1M2NjYTc0MjFkZDA4ZmIiLCJpYXQiOjE3MTEwOTk2MTgsImV4cCI6MTcxMTEyMTIxOH0.bEScIv54iZHZRe7V20EQhl8ncjbcHLKJdl9h2vrpbPE"
     }
 }
 ```

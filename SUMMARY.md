@@ -5,6 +5,7 @@
 * [Onboarding](readme/README.md)
   * [Create Business](readme/create-business.md)
   * [Log In Business](readme/log-in-business.md)
+  * [Refresh Business Token](readme/refresh-business-token.md)
   * [Verify Business TIN](readme/verify-business-tin.md)
   * [Fetch Business User By Id](readme/fetch-business-user-by-id.md)
   * [Fetch Dropdown Options](readme/fetch-dropdown-options.md)

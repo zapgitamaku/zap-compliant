@@ -31,7 +31,6 @@ https://{hostname}/v1/bankdetails/primary
 {
     "businessId":"65eef259501d4e3cbc2cff1d",
     "bankDetailsId":"65ef09e8e3c4c66cdc380afd",
-    "currentPrimaryDetailsId":"65eef614cf9c648ad9b69ba0"
 }
 ```
 
