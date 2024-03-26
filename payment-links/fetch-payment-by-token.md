@@ -57,8 +57,8 @@ Content-Type: application/json; charset=utf-8
     "success": true,
     "data": {
         "businessId": "65eef259501d4e3cbc2cff1d",
-        "productId": [
-            {
+        "products": [{
+            productId: {
                 "businessId": "65eedd391b4fe4aa7d156472",
                 "name": "Johnie Face Cream",
                 "description": "Johnie Face Cream for men",
@@ -67,8 +67,9 @@ Content-Type: application/json; charset=utf-8
                 "createdAt": "2024-03-11T10:57:17.037Z",
                 "updatedAt": "2024-03-11T10:57:17.037Z",
                 "id": "65eee38d84dd365ab0635126"
-            }
-        ],
+            },
+            quantity: 1
+        }],
         "settlementBankDetails": "65eef614cf9c648ad9b69ba0",
         "description": "test payment",
         "paymentType": "oneTime",
