@@ -22,7 +22,6 @@ https://{hostname}/v1/payment/token/:token
 
 ```
 'Content-Type: application/json'
-'Authorization: Bearer  <Bearer Token>'
 ```
 
 ## Request Parameter <a href="#samplerequest" id="samplerequest"></a>
