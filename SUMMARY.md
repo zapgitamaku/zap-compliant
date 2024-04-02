@@ -25,6 +25,7 @@
   * [Disable 2 Factor Authentication](readme/disable-2-factor-authentication.md)
   * [Verify 2 Factor Authentication](readme/verify-2-factor-authentication.md)
   * [Forgot Password](readme/forgot-password.md)
+  * [Validate Token](readme/validate-token.md)
   * [Reset Password](readme/reset-password.md)
 * [Dashboard](dashboard.md)
 * [Payment Links](payment-links/README.md)

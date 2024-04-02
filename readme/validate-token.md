@@ -1,14 +1,14 @@
-# Reset Password
+# Validate Token
 
-### POST /v1/business/auth <a href="#top" id="top"></a>
+### POST /v1/auth/validateToken <a href="#top" id="top"></a>
 
 
 
-Allows the Zap business user to reset password.
+Allows the Zap business to validate token given to User email before resetting password.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-POST
+GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
@@ -17,7 +17,7 @@ The example below shows a request to initiate password reset.
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/business/auth
+https://{hostname}/v1/auth/validateToken?token="$tokendata"
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -31,41 +31,19 @@ https://{hostname}/v1/business/auth
 
 <table><thead><tr><th width="241">Header</th><th>Description</th></tr></thead><tbody><tr><td>Content-type</td><td>application/json</td></tr><tr><td>Authorization</td><td>This is the ZAP Business API Platform authorization token, and must be sent with every API request that requires login.</td></tr></tbody></table>
 
+## Request Query
 
 
-#### **Sample request body** <a href="#top" id="top"></a>
 
-```json
-{
-    "identity":"john@example.com",
-    "newPassword": "newP@ssw0rd"
-}
-```
-
-## Request Body <a href="#samplerequest" id="samplerequest"></a>
-
-| Parameter | Parameter Type | Data Type | Required | Description                                                                                     |
-| --------- | -------------- | --------- | -------- | ----------------------------------------------------------------------------------------------- |
-| Business  | Body           | Object    | Required | Contains information about ZAP platform business owner. Business User unique email is required. |
-
-### Business Object <a href="#samplerequest" id="samplerequest"></a>
-
-Contains information about ZAP's platform business
-
-The properties included in the **Business** object are listed below. All properties are **required** in the request message.
+| Property | Type   | Description                    |
+| -------- | ------ | ------------------------------ |
+| token    | String | Token from the backend server. |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
 If successful, this operation returns HTTP status code 200, with a 2FA details.
 
-### Sample Response <a href="#samplerequest" id="samplerequest"></a>
-
 The sample responses below shows successful completion of this operation.
-
-| Property    | Type   | Description                                                                                                                                     |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| identity    | String | <p>The business user unique identity (email address).</p><p>Max length: 320 chars. Standard email pattern.</p>                                  |
-| newPassword | String | <p>The business user password.</p><p>Must contain at least one digit and one special character and it should be between 8 to 30 characters.</p> |
 
 ### Sample Response
 
@@ -85,7 +63,11 @@ Content-Type: application/json; charset=utf-8
 {
     "success": true,
     "data": {
-        "data": "Password reset successfully"
+        "data": {
+            "email": "jon=hndoe@example.com",
+            "id": "660401e52d03880bc861d4af"
+        },
+        "message": "Validation successful"
     }
 }
 ```
