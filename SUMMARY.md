@@ -142,6 +142,11 @@
   * [Fetch Support Message by id](support-message-service/fetch-support-message-by-id.md)
   * [Edit Support Message by id](support-message-service/edit-support-message-by-id.md)
   * [Delete Support Message by id (soft)](support-message-service/delete-support-message-by-id-soft.md)
+* [AUTOMESSAGE Service](currency-service-1/README.md)
+  * [Create Auto Message](currency-service-1/add-currency.md)
+  * [Fetch Auto Messages](currency-service-1/fetch-currencies.md)
+  * [Activate Auto Message](currency-service-1/delete-currency-by-id.md)
+  * [Deactivate Auto Message](currency-service-1/delete-currency-by-id-1.md)
 * [ZAP Socket Service](zap-socket-service/README.md)
   * [WebSockets](zap-socket-service/websockets.md)
 * [Zap WaitList Service](zap-waitlist-service/README.md)
@@ -152,6 +157,7 @@
 * [NOTIFICATION SERVICE](notification-service/README.md)
   * [Fetch System Notifications](notification-service/fetch-system-notifications.md)
   * [Fetch Security Notifications](notification-service/fetch-security-notifications.md)
+  * [Mobile Crash Notification](notification-service/create-new-waiting-user.md)
 
 ## Reference
 
