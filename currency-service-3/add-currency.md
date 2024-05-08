@@ -1,8 +1,8 @@
-# Create Support Command
+# Create Job Opening
 
-### POST /v1/supportCommand <a href="#top" id="top"></a>
+### POST /v1/career <a href="#top" id="top"></a>
 
-Allows the zap support user to Create a new support command on the platform.
+Allows zap to add a new job opening on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,53 +10,50 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to Create a new support command
+The example below shows a request to Create a new job opening.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand
+https://{hostname}/v1/career
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
-'Authorization: Bearer  <Bearer Token>'
+'zap-career: Bearer  ZAP_EXCHANGE_CAREER'
 ```
 
 #### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
-    "userId": "6515a38ef6d2985656496941",
-    "command": "/hello",
-    "message": "hello"
+
+    "title": "Backend Engineer",
+    "description": "test",
+    "location": "remote",
+    "type": "full time",
+    "qualification": "test",
+    "responsibilities": "test",
+    "benefits": "nice summer"
 }
 ```
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header        | Description                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| Content-type  | application/json                                                                                              |
-| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
+| Header       | Description                                      |
+| ------------ | ------------------------------------------------ |
+| Content-type | application/json                                 |
+| zap-career   | This is the special request header key required. |
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="200">Parameter</th><th width="98">Parm Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>SupportCommand</td><td>Body</td><td>Required</td><td>Contains information about auto messages on ZAP platform name and userId, message and command are required.</td></tr></tbody></table>
-
-#### SupportCommand Object
-
-Contains information about ZAP's platform support command.
-
-The properties included in the SupportCommand object are listed below. All property are **Required**.
-
-<table><thead><tr><th>Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific support user.</td></tr><tr><td>message</td><td>string</td><td>The message of the command.</td></tr><tr><td>command</td><td>string</td><td>The name of the command</td></tr></tbody></table>
+<table><thead><tr><th width="166">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>Career</td><td>Body</td><td>Required</td><td>Contains information about new job on ZAP platform. All fiedls are required.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 201, with information about the new support command.
+If successful, this operation returns HTTP status code 201, with information about the new job.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -76,13 +73,17 @@ Content-Type: application/json; charset=utf-8
 {
     "success": true,
     "data": {
-            "userId": "6515a38ef6d2985656496941",
-            "command": "/hello",
-            "message": "hello",
-            "createdAt": "2024-05-06T15:27:33.310Z",
-            "updatedAt": "2024-05-06T15:27:33.310Z",
-            "id": "6638f6e50ac96302de75c94b"
-        }
+        "title": "backend engineer",
+        "description": "test",
+        "location": "remote",
+        "type": "full time",
+        "qualification": "test",
+        "responsibilities": "test",
+        "benefits": "nice summer"
+        "createdAt": "2024-04-24T20:54:08.494Z",
+        "updatedAt": "2024-04-24T20:54:08.494Z",
+        "id": "646e79705b646159d3d78d95"
+    }
 }
 ```
 
@@ -94,9 +95,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name           | Type           | Description                                                 |
-| -------------- | -------------- | ----------------------------------------------------------- |
-| SupportCommand | SupportCommand | Contains information about support command on ZAP platform. |
+| Name   | Type   | Description                                         |
+| ------ | ------ | --------------------------------------------------- |
+| Career | Career | Contains information about new job on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

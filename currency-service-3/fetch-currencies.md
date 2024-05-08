@@ -1,8 +1,8 @@
-# Fetch Specific Support Command
+# Fetch All Jobs
 
-### Get /v1/supportCommand/:id <a href="#top" id="top"></a>
+### GET /v1/career/all <a href="#top" id="top"></a>
 
-Allows a site to fetch a specific support command on the platform.
+Allows individual to get all available zap job openings on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specific support command
+The example below shows a request to get all job openings.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand/:id
+https://{hostname}/v1/career/all
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -32,7 +32,7 @@ https://{hostname}/v1/supportCommand/:id
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about specific support command.
+If successful, this operation returns HTTP status code 200, with information about the job openings.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -51,14 +51,20 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-            "userId": "6515a38ef6d2985656496941",
-            "command": "/hello",
-            "message": "hello",
-            "createdAt": "2024-05-06T15:27:33.310Z",
-            "updatedAt": "2024-05-06T15:27:33.310Z",
-            "id": "6638f6e50ac96302de75c94b"
-        }
+    "data": [
+        {
+           "title": "backend engineer",
+            "description": "test",
+            "location": "remote",
+            "type": "full time",
+            "qualification": "test",
+            "responsibilities": "test",
+            "benefits": "nice summer"
+            "createdAt": "2024-04-24T20:54:08.494Z",
+            "updatedAt": "2024-04-24T20:54:08.494Z",
+            "id": "646e79705b646159d3d78d95"
+         }
+    ]
 }
 ```
 
@@ -67,6 +73,12 @@ Content-Type: application/json; charset=utf-8
 | Headers      | Description      |
 | ------------ | ---------------- |
 | Content-Type | application/json |
+
+### Response Body <a href="#samplerequest" id="samplerequest"></a>
+
+| Name   | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| Career | Career | Contains information about job openings on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

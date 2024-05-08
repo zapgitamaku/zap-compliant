@@ -1,21 +1,21 @@
-# Fetch Specific Support Command
+# Delete Support Command
 
-### Get /v1/supportCommand/:id <a href="#top" id="top"></a>
+### Put /v1/supportCommand/delete/:id <a href="#top" id="top"></a>
 
-Allows a site to fetch a specific support command on the platform.
+Allows a site to delete a specific support command on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-GET
+PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specific support command
+The example below shows a request to delete a specific support command
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand/:id
+https://{hostname}/v1/supportCommand/delete/:id
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -32,7 +32,7 @@ https://{hostname}/v1/supportCommand/:id
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about specific support command.
+If successful, this operation returns HTTP status code 200, with success message.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -51,14 +51,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-            "userId": "6515a38ef6d2985656496941",
-            "command": "/hello",
-            "message": "hello",
-            "createdAt": "2024-05-06T15:27:33.310Z",
-            "updatedAt": "2024-05-06T15:27:33.310Z",
-            "id": "6638f6e50ac96302de75c94b"
-        }
+    "data": "Support Command deleted successfully"
 }
 ```
 
