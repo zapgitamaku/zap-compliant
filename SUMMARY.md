@@ -166,6 +166,7 @@
   * [Contact Us (get in touch)](syxlabs-website-services/contact-us-get-in-touch.md)
 * [NOTIFICATION SERVICE](notification-service/README.md)
   * [Fetch System Notifications](notification-service/fetch-system-notifications.md)
+  * [Send Push Notifications](notification-service/fetch-system-notifications-1.md)
   * [Fetch Security Notifications](notification-service/fetch-security-notifications.md)
   * [Mobile Crash Notification](notification-service/create-new-waiting-user.md)
 

@@ -27,12 +27,11 @@ https://{hostname}/v1/notification/mobileCrash
 
 #### **Sample request body** <a href="#top" id="top"></a>
 
-```json
-{
-      "errorLog": "Error from mobile app",
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong>      "errorLog": "Error from mobile app",
       "isFatal" : false
 };
-```
+</code></pre>
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
