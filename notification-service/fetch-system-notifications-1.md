@@ -40,7 +40,10 @@ https://{hostname}/v1/notification/push
 {
     "title":"Test Notiification",
     "body":"This is a test Notification",
-    "data": {"buttonText": "Click Here", "buttonAction": "https://zap.africa"},
+    "data": {
+        "buttonText": "Click Here", 
+        "buttonAction": "https://zap.africa", 
+        "image":""},
     "isBulk": true,
     "userId": "655ca834498fd72ce6d2d13c"
 
