@@ -1,21 +1,21 @@
-# Delete Support Command
+# Fetch Specific User Rank
 
-### Put /v1/supportCommand/delete/:id <a href="#top" id="top"></a>
+### Get /v1/leaderBoard/rank/:userId <a href="#top" id="top"></a>
 
-Allows a site to delete a specific support command on the platform.
+Allows a site to get a specific user leaderboard rank on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-PUT
+GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to delete a specific support command
+The example below shows a request to fetch specific user rank on leaderboard
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand/delete/:id
+https://{hostname}/v1/leaderBoard/rank/:userId
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -34,7 +34,7 @@ https://{hostname}/v1/supportCommand/delete/:id
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with success message.
+If successful, this operation returns HTTP status code 200, with user leaderboard rank.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -53,7 +53,17 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "Support Command deleted successfully"
+    "data": {
+        "userRank": {
+            "userId": "6515a38ef6d2985656496941",
+            "totalPoints": 0,
+            "referralPoints": 0,
+            "transactionPoints": 0,
+            "referralTransactionPoints": 0,
+            "rank": 1
+        },
+        "total": 1
+    }
 }
 ```
 

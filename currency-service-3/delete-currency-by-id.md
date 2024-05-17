@@ -1,38 +1,52 @@
-# Fetch Specific Job Opening
+# Add User To Leaderboard
 
-### Put /v1/career/:id <a href="#top" id="top"></a>
+### Put /v1/leaderBoard/:userId <a href="#top" id="top"></a>
 
-Allows a site to fetch a specific job opening on the platform.
+Allows a zap user to  join the loyalty program leaderboard on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-GET
+PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specific job opening
+The example below shows a request to join loyalty program leaderboard
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/career/:id
+https://{hostname}/v1/leaderBoard/:userId
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
+'Authorization: Bearer  <Bearer Token>'
+```
+
+#### **Sample request body** <a href="#top" id="top"></a>
+
+```json
+{
+    "avatar": "https://avatar.com/male.png",
+}
 ```
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header       | Description      |
-| ------------ | ---------------- |
-| Content-type | application/json |
+| Header        | Description                                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------- |
+| Content-type  | application/json                                                                                              |
+| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
+
+## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
+
+<table><thead><tr><th width="166">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>LeaderBoard</td><td>Body</td><td>Required</td><td>Contains information about new added user on ZAP platform leaderboard. avatar is optional.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about specific job opening.
+If successful, this operation returns HTTP status code 200, with success message.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -51,18 +65,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-        "title": "backend engineer",
-        "description": "test",
-        "location": "remote",
-        "type": "full time",
-        "qualification": "test",
-        "responsibilities": "test",
-        "benefits": "nice summer"
-        "createdAt": "2024-04-24T20:54:08.494Z",
-        "updatedAt": "2024-04-24T20:54:08.494Z",
-        "id": "646e79705b646159d3d78d95"
-    }
+    "data": "You have joined the loyalty program successfully"
 }
 ```
 

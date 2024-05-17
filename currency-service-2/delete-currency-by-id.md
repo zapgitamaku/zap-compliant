@@ -22,13 +22,15 @@ https://{hostname}/v1/supportCommand/:id
 
 ```
 'Content-Type: application/json'
+'Authorization: Bearer  <Bearer Token>'
 ```
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header       | Description      |
-| ------------ | ---------------- |
-| Content-type | application/json |
+| Header        | Description                                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------- |
+| Content-type  | application/json                                                                                              |
+| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
