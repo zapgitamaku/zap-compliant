@@ -157,6 +157,8 @@
   * [Add User To Leaderboard](currency-service-3/delete-currency-by-id.md)
   * [Fetch Users LeaderBoard](currency-service-3/fetch-currencies.md)
   * [Fetch Specific User Rank](currency-service-3/delete-currency-by-id-1.md)
+  * [Fetch Specific User Network](currency-service-3/delete-currency-by-id-2.md)
+  * [Fetch Leaderboard Avatars](currency-service-3/fetch-currencies-1.md)
 * [CAREER Service](currency-service-4/README.md)
   * [Create Job Opening](currency-service-4/add-currency.md)
   * [Application to Job Opening](currency-service-4/add-currency-1.md)

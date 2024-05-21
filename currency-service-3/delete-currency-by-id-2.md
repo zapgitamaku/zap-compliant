@@ -1,21 +1,21 @@
-# Add User To Leaderboard
+# Fetch Specific User Network
 
-### Put /v1/leaderBoard/:userId <a href="#top" id="top"></a>
+### Get /v1/leaderBoard/:userId/network <a href="#top" id="top"></a>
 
-Allows a zap user to  join the loyalty program leaderboard on the platform.
+Allows a site to get a specific user leaderboard network on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-PUT
+GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to join loyalty program leaderboard
+The example below shows a request to fetch specific user network
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/leaderBoard/:userId
+https://{hostname}/v1/leaderBoard/:userId/network
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,15 +25,6 @@ https://{hostname}/v1/leaderBoard/:userId
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### **Sample request body** <a href="#top" id="top"></a>
-
-```json
-{
-    "avatar": "https://avatar.com/male.png",
-    "avatarBgColor": "#000000"
-}
-```
-
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
 | Header        | Description                                                                                                   |
@@ -41,13 +32,9 @@ https://{hostname}/v1/leaderBoard/:userId
 | Content-type  | application/json                                                                                              |
 | Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
-## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
-
-<table><thead><tr><th width="166">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>LeaderBoard</td><td>Body</td><td>Required</td><td>Contains information about new added user on ZAP platform leaderboard. avatar and avatarBgColor are required.</td></tr></tbody></table>
-
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with success message.
+If successful, this operation returns HTTP status code 200, with user leaderboard network.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -57,7 +44,7 @@ The sample responses below shows successful completion of this operation.
 
 ```
 HTTP/1.1 200 OK
-Date: Wed, 15 Apr 2024 23:14:31 GMT
+Date: Wed, 15 May 2024 23:14:31 GMT
 Content-Type: application/json; charset=utf-8
 ```
 
@@ -66,7 +53,44 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "You have joined the loyalty program successfully"
+    "data": {
+        "referrer": {
+            "_id": "65689f8ce9f8611059ba3c3c",
+            "username": "azeez",
+            "rank": 3,
+            "referrerLeaderboard": {
+                "_id": "664b55300b80c306e764f906",
+                "userId": "65689f8ce9f8611059ba3c3c",
+                "referralPoints": 0,
+                "transactionPoints": 0,
+                "referralTransactionPoints": 0,
+                "totalPoints": 12,
+                "createdAt": "2024-05-13T13:33:03.924Z",
+                "updatedAt": "2024-05-13T13:33:03.924Z",
+                "__v": 0
+            }
+        },
+        "referredUsers": [
+            {
+                "referredUserId": "647dea2605647ed1d5193b0a",
+                "username": "david",
+                "referredLeaderboard": [
+                    {
+                        "_id": "664b4bee0b80c306e764f903",
+                        "userId": "647dea2605647ed1d5193b0a",
+                        "referralPoints": 0,
+                        "transactionPoints": 0,
+                        "referralTransactionPoints": 0,
+                        "totalPoints": 22,
+                        "createdAt": "2024-05-13T13:33:03.924Z",
+                        "updatedAt": "2024-05-13T13:33:03.924Z",
+                        "__v": 0
+                    }
+                ],
+                "rank": 2
+            }
+        ]
+    }
 }
 ```
 
