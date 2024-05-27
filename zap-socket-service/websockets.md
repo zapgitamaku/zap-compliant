@@ -4,10 +4,6 @@
 
 This document provides a guide on how to implement the WebSocket client-side for the given WebSocket server implementation using socket.io.
 
-
-
-
-
 {% hint style="info" %}
 Note: Conversation Room broadcasts can only be received if the user/guest has joined a conversation room, by emitting the "login/guestLogin" event
 {% endhint %}
@@ -50,6 +46,14 @@ socket.on("connected", ({guestId, socketId, message}) => {
 });
 ```
 
+When a business payment order is connected,
+
+```
+socket.on("connected", ({orderId, socketId, message}) => {
+  console.log(message); // "Connected to the socket.io server"
+});
+```
+
 #### disconnected
 
 The server emits this event when the client has connected successfully.
@@ -82,6 +86,14 @@ This event is emitted by the client to register the guest and associate their so
 
 ```javascript
 socket.emit("guestLogin", { ipAddress: <IP_ADDRESS>});
+```
+
+#### paymentOrderLogin
+
+This event is emitted by the client when a business order is created and associates its socket connection with the orderId, .
+
+```javascript
+socket.emit("paymentOrderLogin", { orderId: <ORDER_ID>});
 ```
 
 #### supportMessage
@@ -179,6 +191,16 @@ This event is emitted by the client when the user disconnects from the WebSocket
 socket.disconnect();
 ```
 
+#### paymentOrderDisconnect
+
+The server emits this event when the client order has disconnected successfully.
+
+```javascript
+socket.emit("paymentOrderDisconnect", (message) => {
+  console.log(message); // "Business payment order disconnected"
+})
+```
+
 ### Listening for Events
 
 The following events can be listened to on the client side.
@@ -225,8 +247,6 @@ socket.on("supportMessageFile", (file) => {
 });
 ```
 
-
-
 #### supportUserMessageFile
 
 This event is emitted by the server when a new support message with a file is received. The client can listen to this event to display the file in the conversation.
@@ -260,12 +280,34 @@ socket.on("orderNotification", ({ orderId, amountReceived, orderAmount, confirme
 });
 ```
 
+#### businessOrderNotification
+
+This event is emitted by the server when there's an update on the business order(server receives business payment funds). The client can listen to this event to display the update.
+
+```javascript
+socket.on("businessOrderNotification", ({ orderId, amountReceived, orderAmount, confirmed, hash }) => {
+  console.log(orderId, amountReceived, orderAmount, confirmed);
+  // Update the UI with the order information
+});
+```
+
 #### orderStatus
 
 This event is emitted by the server when there's an update on the user's order(order status changes to verified). The client can listen to this event to display the update.
 
 ```javascript
 socket.on("orderStatus", ({ orderId, orderStatus}) => {
+  console.log(orderId, orderStatus);
+  // Update the UI with the order information
+});
+```
+
+#### businessOrderStatus
+
+This event is emitted by the server when there's an update on the business order(order status changes to successful, filled, failed, etc.). The client can listen to this event to display the update.
+
+```javascript
+socket.on("businessOrderStatus", ({ orderId, orderStatus}) => {
   console.log(orderId, orderStatus);
   // Update the UI with the order information
 });
@@ -293,4 +335,4 @@ socket.on("conversation", (conversation) => {
 });
 ```
 
-\
+\\
