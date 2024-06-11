@@ -63,6 +63,56 @@ Content-Type: application/json; charset=utf-8
 #### **Sample** Response Body <a href="#top" id="top"></a>
 
 ```json
+{
+    "success": true,
+    "data": [
+            {"lastPrice": "2965.157296583584",
+            "usdPrice": 2.11043223956127,
+            "symbol": "OP",
+            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753080/icons/1712753081087.svg",
+            "priceChangePercent": "-0.34",
+            "percentChange1hr": "-0.34",
+            "percentChange24hr": "-5.90",
+            "marketCap": 2293807618,
+            "volume": 387118081,
+            "allTimeHighUsd": 4.855611043091424,
+            "currencyDetail": {
+                "name": "Optimism",
+                "ticker": "OP",
+                "chainId": "10",
+                "chainIcon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753080/icons/1712753081087.svg",
+                "isCrypto": true,
+                "network": "Optimism",
+                "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753080/icons/1712753081087.svg",
+                "createdAt": "2024-04-12T12:14:22.060Z",
+                "updatedAt": "2024-04-12T12:14:22.060Z",
+                "id": "6619259e0015d8a3e6d37e52"
+            },
+            "history": [
+                {
+                    "date": 1654680600000,
+                    "rate": 0.9869152728903903,
+                    "volume": 188127712,
+                    "cap": 211938440,
+                    "liquidity": 3848072
+                },
+                {
+                    "date": 1655321400000,
+                    "rate": 0.5417595036493404,
+                    "volume": 144455239,
+                    "cap": 116341967,
+                    "liquidity": 5397813
+                },
+                {
+                    "date": 1655962200000,
+                    "rate": 0.47873223348679317,
+                    "volume": 44521049,
+                    "cap": 102806964,
+                    "liquidity": 7693701
+                }
+            ]
+        }]
+}
 ```
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
