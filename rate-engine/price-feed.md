@@ -18,15 +18,11 @@ The example below shows a request to get the price.
 https://{hostname}/v1/rateengine/priceFeed
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
 ```
-
-
-
-
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
@@ -40,9 +36,7 @@ Contains information about ZAP's platform priceFeed data.
 
 This object is used by the following operations:
 
-* #### GET /v1/rateengine/priceFeed
-
-
+* **GET /v1/rateengine/priceFeed**
 
 The properties included in the **Rate** object are listed below.
 
@@ -69,41 +63,6 @@ Content-Type: application/json; charset=utf-8
 #### **Sample** Response Body <a href="#top" id="top"></a>
 
 ```json
-{
-    "success": true,
-    "data": [
-        {
-            "lastPrice": 193511.989948944,
-            "symbol": "BNBBSC",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235730/image/bnb.svg",
-            "priceChangePercent": "0.09507276760095486"
-        },
-        {
-            "lastPrice": 23975153.599999998,
-            "symbol": "BTC",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235118/image/btc.svg",
-            "priceChangePercent": "-0.016647799160966457"
-        },
-        {
-            "lastPrice": 799.78147152,
-            "symbol": "USDTBSC",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235224/image/tether.svg",
-            "priceChangePercent": "0.016778787339467065"
-        },
-        {
-            "lastPrice": 1517230.011099576,
-            "symbol": "ETH",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235469/image/ether.svg",
-            "priceChangePercent": "0.05435677888048291"
-        },
-        {
-            "lastPrice": 794.477065336,
-            "symbol": "USDTERC20",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235224/image/tether.svg",
-            "priceChangePercent": "0.01661162510549459"
-        }
-    ]
-}
 ```
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
@@ -114,9 +73,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name       | Type            | Description                                                              |
-| ---------- | --------------- | ------------------------------------------------------------------------ |
-| Price Feed | price feed Data | Contains information about  Prices of Zap supported currencies in Naira. |
+| Name       | Type            | Description                                                             |
+| ---------- | --------------- | ----------------------------------------------------------------------- |
+| Price Feed | price feed Data | Contains information about Prices of Zap supported currencies in Naira. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -128,4 +87,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | 401  | Unauthorized                                                                                                                                                                                                                                                                                                                      |
 | 404  | Not Found: Returned if the request                                                                                                                                                                                                                                                                                                |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
