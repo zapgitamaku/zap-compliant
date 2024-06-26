@@ -1,8 +1,8 @@
-# Fetch Users LeaderBoard
+# Fetch Support Commands
 
-### GET /v1/leaderBoard <a href="#top" id="top"></a>
+### GET /v1/supportCommand/all <a href="#top" id="top"></a>
 
-Allows a user to get only the top 100 users on zap loyalty program leaderboard on the platform.
+Allows a support user to get a list of support command on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to get the leaderboard
+The example below shows a request to get a list of support commands.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/leaderBoard
+https://{hostname}/v1/supportCommand/all
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -32,15 +32,15 @@ https://{hostname}/v1/leaderBoard
 | Content-type  | application/json                                                                                              |
 | Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
-#### Leaderboard Object
+#### Support Command Object
 
-Contains information about ZAP's platform Leaderboard.
+Contains information about ZAP's platform support command.
 
-<table><thead><tr><th width="240">Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific user.</td></tr><tr><td>referralPoints</td><td>number</td><td>The points from their referral fully verifying</td></tr><tr><td>transactionPoints</td><td>number</td><td>The points from every transaction</td></tr><tr><td>referralTransactionPoints</td><td>number</td><td>The points from their referrals each transaction</td></tr><tr><td>totalPoints</td><td>number</td><td>The total points accumulated.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific support user.</td></tr><tr><td>message</td><td>string</td><td>The message of the command</td></tr><tr><td>command</td><td>string</td><td>The support command</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about the leaderboard.
+If successful, this operation returns HTTP status code 200, with information about the support commands.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -61,16 +61,12 @@ Content-Type: application/json; charset=utf-8
     "success": true,
     "data": [
         {
-            "userId": {
-                "username": "gideondev"
-            },
-            "referralPoints": 0,
-            "transactionPoints": 0,
-            "referralTransactionPoints": 0,
-            "totalPoints": 0,
-            "createdAt": "2024-05-13T13:33:03.924Z",
-            "updatedAt": "2024-05-13T13:33:03.924Z",
-            "id": "6642168f80917bc5c209a46a"
+            "userId": "6515a38ef6d2985656496941",
+            "command": "/hello",
+            "message": "hello",
+            "createdAt": "2024-05-06T15:27:33.310Z",
+            "updatedAt": "2024-05-06T15:27:33.310Z",
+            "id": "6638f6e50ac96302de75c94b"
         }
     ]
 }
@@ -84,9 +80,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name                  | Type                  | Description                                             |
-| --------------------- | --------------------- | ------------------------------------------------------- |
-| <h4>Leaderboard </h4> | <h4>Leaderboard </h4> | Contains information about leaderboard on ZAP platform. |
+| Name           | Type           | Description                                                  |
+| -------------- | -------------- | ------------------------------------------------------------ |
+| SupportCommand | SupportCommand | Contains information about support commands on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

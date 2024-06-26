@@ -1,21 +1,21 @@
-# Add User To Leaderboard
+# Fetch Specific Support Command
 
-### Put /v1/leaderBoard/:userId <a href="#top" id="top"></a>
+### Get /v1/supportCommand/:id <a href="#top" id="top"></a>
 
-Allows a zap user to  join the loyalty program leaderboard on the platform.
+Allows a site to fetch a specific support command on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-PUT
+GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to join loyalty program leaderboard
+The example below shows a request to fetch a specific support command
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/leaderBoard/:userId
+https://{hostname}/v1/supportCommand/:id
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -25,15 +25,6 @@ https://{hostname}/v1/leaderBoard/:userId
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### **Sample request body** <a href="#top" id="top"></a>
-
-```json
-{
-    "avatar": "https://avatar.com/male.png",
-    "avatarBgColor": "#000000"
-}
-```
-
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
 | Header        | Description                                                                                                   |
@@ -41,13 +32,9 @@ https://{hostname}/v1/leaderBoard/:userId
 | Content-type  | application/json                                                                                              |
 | Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
-## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
-
-<table><thead><tr><th width="166">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>LeaderBoard</td><td>Body</td><td>Required</td><td>Contains information about new added user on ZAP platform leaderboard. avatar and avatarBgColor are required.</td></tr></tbody></table>
-
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with success message.
+If successful, this operation returns HTTP status code 200, with information about specific support command.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -66,7 +53,14 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "You have joined the loyalty program successfully"
+    "data": {
+            "userId": "6515a38ef6d2985656496941",
+            "command": "/hello",
+            "message": "hello",
+            "createdAt": "2024-05-06T15:27:33.310Z",
+            "updatedAt": "2024-05-06T15:27:33.310Z",
+            "id": "6638f6e50ac96302de75c94b"
+        }
 }
 ```
 

@@ -329,9 +329,9 @@ socket.on("conversationChange", {
 This event is emitted by the server when there's an update on the user's leaderboard points and rank. The client can listen to this event to display the confetti for when there's a change in rank.
 
 ```javascript
-socket.on("leaderboardUpdate", ({ isRankChange, oldRank, newRank, pointsAdded}) => {
-  console.log(isRankChange, oldRank, newRank, points);
-  // true, 5, 3, 128
+socket.on("leaderboardUpdate", ({ isRankChange, oldRank, newRank, pointsAdded, leaderboardName}) => {
+  console.log(isRankChange, oldRank, newRank, points, leaderboardName);
+  // true, 5, 3, 128, Test loyalty program
 });
 ```
 

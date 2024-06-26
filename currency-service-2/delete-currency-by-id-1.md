@@ -1,8 +1,8 @@
-# Delete Support Command
+# Update Loyalty Program
 
-### Put /v1/supportCommand/delete/:id <a href="#top" id="top"></a>
+### Put /v1/loyaltyProgram/update/:id <a href="#top" id="top"></a>
 
-Allows a site to delete a specific support command on the platform.
+Allows a site admin/support User to update a loyalty program on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to delete a specific support command
+The example below shows a request to update a loyalty program.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand/delete/:id
+https://{hostname}/v1/loyaltyProgram/update/:id
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -27,14 +27,22 @@ https://{hostname}/v1/supportCommand/delete/:id
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header        | Description                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| Content-type  | application/json                                                                                              |
-| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
+| Header        | Description                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Content-type  | application/json                                                                                               |
+| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login. |
+
+#### **Sample request body** <a href="#top" id="top"></a>
+
+```json
+{
+    "name": "Test Loyalty Program"
+}
+```
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with success message.
+If successful, this operation returns HTTP status code 200, sucess information.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -53,7 +61,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": "Support Command deleted successfully"
+    "data": "Loyalty program updated successfully"
 }
 ```
 

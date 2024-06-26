@@ -1,8 +1,8 @@
-# Fetch Users LeaderBoard
+# Fetch Specific User Rank
 
-### GET /v1/leaderBoard <a href="#top" id="top"></a>
+### Get /v1/leaderBoard/rank/:userId <a href="#top" id="top"></a>
 
-Allows a user to get only the top 100 users on zap loyalty program leaderboard on the platform.
+Allows a site to get a specific user leaderboard rank on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ GET
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to get the leaderboard
+The example below shows a request to fetch specific user rank on leaderboard
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/leaderBoard
+https://{hostname}/v1/leaderBoard/rank/:userId
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -32,15 +32,9 @@ https://{hostname}/v1/leaderBoard
 | Content-type  | application/json                                                                                              |
 | Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
-#### Leaderboard Object
-
-Contains information about ZAP's platform Leaderboard.
-
-<table><thead><tr><th width="240">Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific user.</td></tr><tr><td>referralPoints</td><td>number</td><td>The points from their referral fully verifying</td></tr><tr><td>transactionPoints</td><td>number</td><td>The points from every transaction</td></tr><tr><td>referralTransactionPoints</td><td>number</td><td>The points from their referrals each transaction</td></tr><tr><td>totalPoints</td><td>number</td><td>The total points accumulated.</td></tr></tbody></table>
-
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about the leaderboard.
+If successful, this operation returns HTTP status code 200, with user leaderboard rank.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -59,23 +53,22 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": [
-        {
-            "userId": {
-                "username": "gideondev"
-            },
-            "referralPoints": 0,
+    "data": {
+        "userRank": {
+            "userId": "6515a38ef6d2985656496941",
+            "totalPoints": 300,
+            "referralPoints": 300,
             "transactionPoints": 0,
             "referralTransactionPoints": 0,
-            "totalPoints": 0,
-            "createdAt": "2024-05-13T13:33:03.924Z",
-            "updatedAt": "2024-05-13T13:33:03.924Z",
-            "id": "6642168f80917bc5c209a46a",
+            "rank": 1,
+            "avatar": "https://res.cloudinary.com/dclh3qo14/image/upload/v1716284948/avatar_10_1_gmil8i.png",
+            "avatarBgColor": "#4E0BCF",
             "streak": 0,
             "multiplier": 1,
             "leaderboardId": "667b729f555588230fd76f59"
-        }
-    ]
+        },
+        "total": 1
+    }
 }
 ```
 
@@ -84,12 +77,6 @@ Content-Type: application/json; charset=utf-8
 | Headers      | Description      |
 | ------------ | ---------------- |
 | Content-Type | application/json |
-
-### Response Body <a href="#samplerequest" id="samplerequest"></a>
-
-| Name                  | Type                  | Description                                             |
-| --------------------- | --------------------- | ------------------------------------------------------- |
-| <h4>Leaderboard </h4> | <h4>Leaderboard </h4> | Contains information about leaderboard on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

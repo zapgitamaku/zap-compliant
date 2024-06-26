@@ -65,6 +65,9 @@ Content-Type: application/json; charset=utf-8
                 "transactionPoints": 0,
                 "referralTransactionPoints": 0,
                 "totalPoints": 12,
+                "streak": 0,
+                "multiplier": 1,
+                "leaderboardId": "667b729f555588230fd76f59"
                 "createdAt": "2024-05-13T13:33:03.924Z",
                 "updatedAt": "2024-05-13T13:33:03.924Z",
                 "__v": 0
@@ -82,6 +85,9 @@ Content-Type: application/json; charset=utf-8
                         "transactionPoints": 0,
                         "referralTransactionPoints": 0,
                         "totalPoints": 22,
+                        "streak": 0,
+                        "multiplier": 1,
+                        "leaderboardId": "667b729f555588230fd76f59"
                         "createdAt": "2024-05-13T13:33:03.924Z",
                         "updatedAt": "2024-05-13T13:33:03.924Z",
                         "__v": 0

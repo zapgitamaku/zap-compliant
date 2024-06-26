@@ -1,2 +1,2 @@
-# SUPPORT COMMAND  Service
+# LOYALTY PROGRAM Service
 

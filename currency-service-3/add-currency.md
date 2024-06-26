@@ -1,8 +1,8 @@
-# Create Loyalty Program
+# Create Support Command
 
-### POST /v1/loyaltyProgram <a href="#top" id="top"></a>
+### POST /v1/supportCommand <a href="#top" id="top"></a>
 
-Allows the zap admin/support user to Create a new loyalty program.
+Allows the zap support user to Create a new support command on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to Create a new loyalty program.
+The example below shows a request to Create a new support command
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/loyaltyProgram
+https://{hostname}/v1/supportCommand
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -29,7 +29,9 @@ https://{hostname}/v1/loyaltyProgram
 
 ```json
 {
-    "name": "Test Loyalty Program"
+    "userId": "6515a38ef6d2985656496941",
+    "command": "/hello",
+    "message": "hello"
 }
 ```
 
@@ -42,19 +44,19 @@ https://{hostname}/v1/loyaltyProgram
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>LoyaltyProgram</td><td>Body</td><td>Required</td><td>Contains information about loyalty program on ZAP platform. name is required.</td></tr></tbody></table>
+<table><thead><tr><th width="200">Parameter</th><th width="98">Parm Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>SupportCommand</td><td>Body</td><td>Required</td><td>Contains information about auto messages on ZAP platform name and userId, message and command are required.</td></tr></tbody></table>
 
-#### LoyaltyProgram Object
+#### SupportCommand Object
 
-Contains information about ZAP's platform loyalty program.
+Contains information about ZAP's platform support command.
 
-The properties included in the LoyaltyProgram object are listed below. All property are **Required**.
+The properties included in the SupportCommand object are listed below. All property are **Required**.
 
-<table><thead><tr><th>Property</th><th width="132">Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>The name of the program.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific support user.</td></tr><tr><td>message</td><td>string</td><td>The message of the command.</td></tr><tr><td>command</td><td>string</td><td>The name of the command</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 201, with information about the new auto message.
+If successful, this operation returns HTTP status code 201, with information about the new support command.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -64,7 +66,7 @@ The sample responses below shows successful completion of this operation.
 
 ```
 HTTP/1.1 201 OK
-Date: Wed, 15 Jun 2024 23:14:31 GMT
+Date: Wed, 15 Apr 2024 23:14:31 GMT
 Content-Type: application/json; charset=utf-8
 ```
 
@@ -74,12 +76,13 @@ Content-Type: application/json; charset=utf-8
 {
     "success": true,
     "data": {
-        "name": "Test Loyalty Program",
-        "isEnded": false,
-        "createdAt": "2024-06-26T01:45:03.830Z",
-        "updatedAt": "2024-06-26T01:45:03.830Z",
-        "id": "667b729f555588230fd76f59"
-    }
+            "userId": "6515a38ef6d2985656496941",
+            "command": "/hello",
+            "message": "hello",
+            "createdAt": "2024-05-06T15:27:33.310Z",
+            "updatedAt": "2024-05-06T15:27:33.310Z",
+            "id": "6638f6e50ac96302de75c94b"
+        }
 }
 ```
 
@@ -93,7 +96,7 @@ Content-Type: application/json; charset=utf-8
 
 | Name           | Type           | Description                                                 |
 | -------------- | -------------- | ----------------------------------------------------------- |
-| LoyaltyProgram | LoyaltyProgram | Contains information about loyalty program on ZAP platform. |
+| SupportCommand | SupportCommand | Contains information about support command on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
