@@ -125,6 +125,7 @@
   * [Get Rate With Currencies(USD amount)](rate-engine/get-rate-with-currencies-usd-amount.md)
   * [Get Rate With Currencies Reversed](rate-engine/get-rate-with-currencies-reversed.md)
   * [Price Feed](rate-engine/price-feed.md)
+  * [Fetch Specific Currency Price Feed History and Detail](rate-engine/price-feed-1.md)
 * [Support Conversation Service](support-conversation-service/README.md)
   * [Create New Support Conversation](support-conversation-service/create-new-support-conversation.md)
   * [Fetch Support Conversations by userId](support-conversation-service/fetch-support-conversations-by-userid.md)
