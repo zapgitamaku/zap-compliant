@@ -24,18 +24,12 @@ https://{hostname}/v1/otp/resend
 'Content-Type: application/json'
 ```
 
-#### &#x20;**Sample request body** <a href="#top" id="top"></a>
+#### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 // To resend OTP to email only
 {
     "email": "adminuser@zap.com",
-}
-
-// To resend OTP to email and phoneNumber simultaneously
-{
-    "email": "adminuser@zap.com",
-    "phoneNumber": "+2348011111111"
 }
 
 // To resend OTP to only phoneNumber simultaneously
@@ -65,7 +59,7 @@ Contains information about ZAP's platform user.
 
 This object is used by the following operations:
 
-* #### POST /api/v1/otp/resend
+* **POST /api/v1/otp/resend**
 
 The properties included in the **User** object are listed below. All properties are **required** in the request message.
 
@@ -107,9 +101,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name | Type   | Description                                                        |
-| ---- | ------ | ------------------------------------------------------------------ |
-| Data | String | Contains success information about the Secure OTP generated  user. |
+| Name | Type   | Description                                                       |
+| ---- | ------ | ----------------------------------------------------------------- |
+| Data | String | Contains success information about the Secure OTP generated user. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -119,4 +113,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
