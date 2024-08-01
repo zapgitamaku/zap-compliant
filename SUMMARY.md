@@ -153,6 +153,7 @@
 * [LOYALTY PROGRAM Service](currency-service-2/README.md)
   * [Create Loyalty Program](currency-service-2/add-currency.md)
   * [Fetch Loyalty Program](currency-service-2/fetch-currencies.md)
+  * [Fetch Active Loyalty Program](currency-service-2/fetch-currencies-1.md)
   * [End Loyalty Program](currency-service-2/delete-currency-by-id.md)
   * [Update Loyalty Program](currency-service-2/delete-currency-by-id-1.md)
 * [SUPPORT COMMAND  Service](currency-service-3/README.md)
