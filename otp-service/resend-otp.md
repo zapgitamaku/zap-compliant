@@ -32,12 +32,13 @@ https://{hostname}/v1/otp/resend
     "email": "adminuser@zap.com",
 }
 
-// To resend OTP to only phoneNumber simultaneously
+// To resend OTP to only phoneNumber
 {
-    "phoneNumber": "+2348011111111"
+    "phoneNumber": "+2348011111111",
+    "channel": "whatsapp" | "sms" | "voice"
 }
 
-// To resend OTP to only username simultaneously
+// To resend OTP to only email 
 {
     "username": "onlydev"
 }
@@ -67,6 +68,7 @@ The properties included in the **User** object are listed below. All properties 
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------ |
 | email       | string | <p>The user's email address.</p><p>Max length: 320 chars. Standard email pattern.</p>                  |
 | phoneNumber | string | <p>The user's phone number.<br>Max length: 15 chars plus country code.<br>Must start with "+" sign</p> |
+| channel     | string | <p>Optional. Channels include: whatsapp, voice and sms.<br>default is sms </p>                         |
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
