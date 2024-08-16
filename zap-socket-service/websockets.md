@@ -142,6 +142,7 @@ socket.emit("supportUserMessage", {
   userId: <USER_ID>,
   conversationId: <CONVERSATION_ID>,
   message: <MESSAGE_TEXT>,
+  messageHtml: <MESSAGE_TEXT_MARKDOWN>,
 });
 ```
 
