@@ -1,21 +1,21 @@
-# Fetch Users LeaderBoard
+# Delete Specific User Alerts
 
-### GET /v1/leaderBoard <a href="#top" id="top"></a>
+### DELETE /v1/priceAlerts/delete/:alertId <a href="#top" id="top"></a>
 
-Allows a user to get only the top 100 users on zap loyalty program leaderboard on the platform.
+Allows a zap user to delete an alert on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-GET
+DELETE
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to get the leaderboard
+The example below shows a request to delete a user alerts.
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/leaderBoard
+https://{hostname}/v1/priceAlerts/delete/:alertId
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -32,15 +32,13 @@ https://{hostname}/v1/leaderBoard
 | Content-type  | application/json                                                                                              |
 | Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
 
-#### Leaderboard Object
+## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-Contains information about ZAP's platform Leaderboard.
-
-<table><thead><tr><th width="240">Property</th><th width="150">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique ID for a specific user.</td></tr><tr><td>referralPoints</td><td>number</td><td>The points from their referral fully verifying</td></tr><tr><td>transactionPoints</td><td>number</td><td>The points from every transaction</td></tr><tr><td>referralTransactionPoints</td><td>number</td><td>The points from their referrals each transaction</td></tr><tr><td>totalPoints</td><td>number</td><td>The total points accumulated.</td></tr></tbody></table>
+<table><thead><tr><th width="163">key</th><th width="173">value</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>&#x3C;userid></td><td>The unique ID of the user.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about the leaderboard.
+If successful, this operation returns HTTP status code 200, with information about the user preferences.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -50,7 +48,7 @@ The sample responses below shows successful completion of this operation.
 
 ```
 HTTP/1.1 200 OK
-Date: Wed, 15 Apr 2024 23:14:31 GMT
+Date: Wed, 15 Jun 2024 23:14:31 GMT
 Content-Type: application/json; charset=utf-8
 ```
 
@@ -59,23 +57,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": [
-        {
-            "userId": {
-                "username": "gideondev"
-            },
-            "referralPoints": 0,
-            "transactionPoints": 0,
-            "referralTransactionPoints": 0,
-            "totalPoints": 0,
-            "createdAt": "2024-05-13T13:33:03.924Z",
-            "updatedAt": "2024-05-13T13:33:03.924Z",
-            "id": "6642168f80917bc5c209a46a",
-            "streak": 0,
-            "multiplier": 1,
-            "leaderboardId": "667b729f555588230fd76f59"
-        }
-    ]
+    "data": "Alert deleted successfully"
 }
 ```
 
@@ -87,9 +69,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name                  | Type                  | Description                                             |
-| --------------------- | --------------------- | ------------------------------------------------------- |
-| <h4>Leaderboard </h4> | <h4>Leaderboard </h4> | Contains information about leaderboard on ZAP platform. |
+| Name        | Type        | Description                                                 |
+| ----------- | ----------- | ----------------------------------------------------------- |
+| PriceAlerts | PriceAlerts | Contains information about user preference on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 

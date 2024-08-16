@@ -1,21 +1,21 @@
-# Fetch Specific Support Command
+# Update Token Watchlist
 
-### Get /v1/supportCommand/:id <a href="#top" id="top"></a>
+### PUT /v1/preferences/watchlist <a href="#top" id="top"></a>
 
-Allows a site to fetch a specific support command on the platform.
+Allows a zap User to update their watchlist preference settings on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
-GET
+PUT
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to fetch a specific support command
+The example below shows a request to update a user watchlist preference
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/supportCommand/:id
+https://{hostname}/v1/preferences/watchlist
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -27,14 +27,30 @@ https://{hostname}/v1/supportCommand/:id
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header        | Description                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| Content-type  | application/json                                                                                              |
-| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
+| Header        | Description                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Content-type  | application/json                                                                                               |
+| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login. |
+
+#### **Sample request body** <a href="#top" id="top"></a>
+
+```json
+{
+    "userId": "6515a38ef6d2985656496941",
+    "allowTokenWatchList": true,
+    "tokensToAdd": ["6686c13708a2b18bb2acbd58"], //for adding new tokens to watchlist
+     "tokensToRemove": ["6686c13708a2b18bb2acbd58"], //for removing tokens from watchlist
+    "watchListPercentageChange": 2
+}
+```
+
+## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
+
+<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>Watchlist</td><td>Body</td><td>Required</td><td>Contains information about user watchlist preference on ZAP platform. userId is required, and the rest are optional.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
-If successful, this operation returns HTTP status code 200, with information about specific support command.
+If successful, this operation returns HTTP status code 200, sucess information.
 
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -44,7 +60,7 @@ The sample responses below shows successful completion of this operation.
 
 ```
 HTTP/1.1 200 OK
-Date: Wed, 15 Apr 2024 23:14:31 GMT
+Date: Wed, 15 Aug 2024 23:14:31 GMT
 Content-Type: application/json; charset=utf-8
 ```
 
@@ -53,14 +69,7 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-            "userId": "6515a38ef6d2985656496941",
-            "command": "/hello",
-            "message": "hello",
-            "createdAt": "2024-05-06T15:27:33.310Z",
-            "updatedAt": "2024-05-06T15:27:33.310Z",
-            "id": "6638f6e50ac96302de75c94b"
-        }
+    "data": "User Preference updated successfully"
 }
 ```
 
