@@ -18,7 +18,7 @@ The example below shows a support user request to re-open support conversation b
 https://{hostname}/v1/support/conversation/reopen/:id
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
@@ -42,15 +42,15 @@ Contains information about ZAP's platform Support Conversations.
 
 This object is used by the following operations:
 
-* #### POST /v1/support/conversations
-* #### GET /v1/support/:userId/conversations
-* #### GET /v1/support/conversation/:Id
-* #### GET  /v1/support/conversation/:Id/close
-* #### PUT  /v1/support/conversation/:Id
+* **POST /v1/support/conversations**
+* **GET /v1/support/:userId/conversations**
+* **GET /v1/support/conversation/:Id**
+* **GET /v1/support/conversation/:Id/close**
+* **PUT /v1/support/conversation/:Id**
 
-The properties included in the Support Conversation object are listed below.&#x20;
+The properties included in the Support Conversation object are listed below.
 
-<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support conversation unique ID. </td></tr><tr><td>messages</td><td>array</td><td>The field takes the array of the details of the support messages.</td></tr><tr><td>supportId</td><td>object</td><td>The details of the support user on the platform.</td></tr><tr><td>userId</td><td>object</td><td>The details of the  user who created the support conversation on the platform.</td></tr><tr><td>userUnreadCount</td><td>number</td><td>The number of unread messages sent by a user</td></tr><tr><td>supportUnreadCount</td><td>number</td><td>The number of unread messages sent by a support user</td></tr><tr><td>isClosed</td><td>boolean</td><td>The (open or closed) status of the support conversation.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support conversation  is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support conversation was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support conversation was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support conversation was last updated. Used only in response messages.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support conversation unique ID.</td></tr><tr><td>messages</td><td>array</td><td>The field takes the array of the details of the support messages.</td></tr><tr><td>supportId</td><td>object</td><td>The details of the support user on the platform.</td></tr><tr><td>userId</td><td>object</td><td>The details of the user who created the support conversation on the platform.</td></tr><tr><td>userUnreadCount</td><td>number</td><td>The number of unread messages sent by a user</td></tr><tr><td>supportUnreadCount</td><td>number</td><td>The number of unread messages sent by a support user</td></tr><tr><td>isClosed</td><td>boolean</td><td>The (open or closed) status of the support conversation.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support conversation is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support conversation was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support conversation was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support conversation was last updated. Used only in response messages.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -70,22 +70,47 @@ Content-Type: application/json; charset=utf-8
 
 #### **Sample** Response Body <a href="#top" id="top"></a>
 
-```json
+````json
 {
       "success": true,
       "data": {
-              "messages": [],
-              "supportId": "644a53ed9829e85215296ee6",
-              "userId": "644a53e99829e85215296edf",
-              "userUnreadCount": 0,
-              "supportUnreadCount": 0,
-              "isClosed": false,
-              "createdAt": "2023-07-20T12:14:27.089Z",
-              "updatedAt": "2023-07-20T12:14:27.089Z",
-              "id": "644a53f19829e85215296ef2"
-          }
-    }
+            "type": "Chat",
+            "escalatedAt": null,
+            "reviewedAt": null,
+            "botResponded": false,
+            "messages": [
+                {
+                    "isBot": false,
+                    "userId": "655f5b9117b9a5d86136a1c4",
+                    "onModel": "Guest",
+                    "message": "Hi Support",
+                    "fileUrl": "",
+                    "fileType": "",
+                    "conversationId": "655f5b9a17b9a5d86136a1d2",
+                    "read": false,
+                    "createdAt": "2023-11-23T14:03:06.798Z",
+                    "updatedAt": "2023-11-23T14:03:06.798Z",
+                    "id": "655f5b9a17b9a5d86136a1d6"
+                }
+            ],
+            "supportId": null,
+            "userId": {
+                "name": "Guest240",
+                "id": "655f5b9117b9a5d86136a1c4"
+            },
+            "onModel": "Guest",
+            "userUnreadCount": 1,
+            "supportUnreadCount": 0,
+            "isClosed": false,
+            "createdAt": "2023-11-23T14:03:06.513Z",
+            "updatedAt": "2024-07-03T18:55:00.270Z",
+            "isEscalated": false,
+            "closedAt": null,
+            "id": "655f5b9a17b9a5d86136a1d2"
+        },
 ```
+    }
+````
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
 
@@ -95,9 +120,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name                 | Type                 | Description                                                                  |
-| -------------------- | -------------------- | ---------------------------------------------------------------------------- |
-| Support Conversation | Support Conversation | Contains information about the closed Support Conversation on ZAP  platform. |
+| Name                 | Type                 | Description                                                                 |
+| -------------------- | -------------------- | --------------------------------------------------------------------------- |
+| Support Conversation | Support Conversation | Contains information about the closed Support Conversation on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -107,4 +132,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-

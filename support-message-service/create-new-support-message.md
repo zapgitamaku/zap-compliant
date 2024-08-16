@@ -18,14 +18,14 @@ The example below shows a user request to Create a new support message in a conv
 https://{hostname}/v1/support/messages
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### &#x20;**Sample request body** <a href="#top" id="top"></a>
+#### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
@@ -44,7 +44,7 @@ https://{hostname}/v1/support/messages
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="142">Parameter</th><th width="91">Parm Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>Support Message</td><td>Body</td><td>Required</td><td>Contains information about creating  support messages on ZAP platform. userId, message and conversationId is required, and fileUrl and fileType is optional.</td></tr></tbody></table>
+<table><thead><tr><th width="142">Parameter</th><th width="91">Parm Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>Support Message</td><td>Body</td><td>Required</td><td>Contains information about creating support messages on ZAP platform. userId, message and conversationId is required, and fileUrl and fileType is optional.</td></tr></tbody></table>
 
 #### Support Message Object
 
@@ -52,14 +52,14 @@ Contains information about ZAP's platform Support Messages.
 
 This object is used by the following operations:
 
-* #### POST /v1/support/conversations
-* #### GET /v1/support/:conversationId/messages
-* #### GET /v1/support/messages/:Id
-* #### PUT  /v1/support/messages/:Id
+* **POST /v1/support/conversations**
+* **GET /v1/support/:conversationId/messages**
+* **GET /v1/support/messages/:Id**
+* **PUT /v1/support/messages/:Id**
 
-The properties included in the Support Conversation object are listed below.&#x20;
+The properties included in the Support Conversation object are listed below.
 
-<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support message unique ID. </td></tr><tr><td>messages</td><td>string</td><td>The field takes the message sent.</td></tr><tr><td>conversationId</td><td>string</td><td>The unique ID of the support conversation opened for the support messages to be sent on the platform.</td></tr><tr><td>userId</td><td>string</td><td>The unique ID of the  user who sent the  support message on the platform.</td></tr><tr><td>fileUrl</td><td>string</td><td>The url of the file sent.</td></tr><tr><td>fileType</td><td>string</td><td>The type of the file sent.</td></tr><tr><td>read</td><td>boolean</td><td>The status of the messagr</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support message is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support message was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support message was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support message was last updated. Used only in response messages.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support message unique ID.</td></tr><tr><td>messages</td><td>string</td><td>The field takes the message sent.</td></tr><tr><td>conversationId</td><td>string</td><td>The unique ID of the support conversation opened for the support messages to be sent on the platform.</td></tr><tr><td>userId</td><td>string</td><td>The unique ID of the user who sent the support message on the platform.</td></tr><tr><td>fileUrl</td><td>string</td><td>The url of the file sent.</td></tr><tr><td>fileType</td><td>string</td><td>The type of the file sent.</td></tr><tr><td>read</td><td>boolean</td><td>The status of the messagr</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support message is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support message was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support message was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support message was last updated. Used only in response messages.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -83,13 +83,17 @@ Content-Type: application/json; charset=utf-8
 {
       "success": true,
       "data": {
-        "messages": "Hello, how are you?",
-        "conversationId": "644a9e270b803077ce269b68",
-        "userId": "644a9e1f0b803077ce269b58",
+        "userId": "647df18a05647ed1d5193ba8",
+        "onModel": "User",
+        "message": "Hi, Support.",
+        "messageHtml": "",
+        "conversationId": "660699486386958b44c2550b",
         "read": false,
-        "createdAt": "2023-04-27T10:52:33.039Z",
-        "updatedAt": "2023-04-27T10:52:33.039Z",
-        "id": "644a9e270b803077ce269b6d"
+        "isBot": false,
+        "source": "PostmanRuntime/7.41.0",
+        "createdAt": "2024-08-16T10:56:54.515Z",
+        "updatedAt": "2024-08-16T10:56:54.515Z",
+        "id": "66bf307618e04f8cbb37ee43"
       }
     }
 ```
@@ -102,9 +106,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name            | Type            | Description                                                        |
-| --------------- | --------------- | ------------------------------------------------------------------ |
-| Support Message | Support Message | Contains information about  sent Support Message on ZAP  platform. |
+| Name            | Type            | Description                                                      |
+| --------------- | --------------- | ---------------------------------------------------------------- |
+| Support Message | Support Message | Contains information about sent Support Message on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -114,4 +118,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-

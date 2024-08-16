@@ -1,8 +1,8 @@
-# Escalate Support Conversation
+# Review Support Conversation
 
 ### PUT /v1/support/conversation/:id/notes <a href="#top" id="top"></a>
 
-Allows a zap user and guest to escalate a support conversation  about their support conversation.
+Allows a zap user and guest to escalate a support conversation or send review about their support conversation.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -37,14 +37,18 @@ https://{hostname}/v1/support/conversation/:id/notes
 
 <table><thead><tr><th width="154">Key</th><th width="128">Value</th><th>Description</th></tr></thead><tbody><tr><td>Id</td><td>&#x3C;Id></td><td>The unique ID for a conversation. make sure the guest/user escalating the conversation is the user of the conversation.</td></tr></tbody></table>
 
-#### **Sample request body** <a href="#top" id="top"></a>
+
+
+#### Sample request body
 
 ```json
 {
-    "reviewType": "escalate",
-    "reason": "customer's issue has taken so long"
+    "reviewType": "review",
+    "note": "Agent ensured the issue was handled quickly"
 }
 ```
+
+#### Review type can either be "review" or "escalate"&#x20;
 
 Review type "review" must have a "note" field while type "escalate" will have a "reason" field as seen above.
 
@@ -95,7 +99,7 @@ Content-Type: application/json; charset=utf-8
             "id": "668e6a911213eda92dc18232a"
         },
         "onModel": "User",
-        "reviewType": "escalate",
+        "reviewType": "review",
         "userUnreadCount": 0,
         "supportUnreadCount": 0,
         "isClosed": false,
@@ -106,8 +110,8 @@ Content-Type: application/json; charset=utf-8
         "botResponded": false,
         "createdAt": "2024-07-10T12:00:56.688Z",
         "updatedAt": "2024-07-10T12:01:31.299Z",
-        "notes": "",
-        "reason": "escalating zap is a must, everyone should use zap!",
+        "notes": "nice replies!",
+        "reason": "",
         "id": "668e77f8323b42t2t0f6abb49"
     }
 }

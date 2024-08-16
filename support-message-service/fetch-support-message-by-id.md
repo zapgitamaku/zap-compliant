@@ -18,7 +18,7 @@ The example below shows a user request to get a specific support message by id.
 https://{hostname}/v1/support/messages/:id
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
@@ -42,14 +42,14 @@ Contains information about ZAP's platform Support Messages.
 
 This object is used by the following operations:
 
-* #### POST /v1/support/conversations
-* #### GET /v1/support/:conversationId/messages
-* #### GET /v1/support/messages/:Id
-* #### PUT  /v1/support/messages/:Id
+* **POST /v1/support/conversations**
+* **GET /v1/support/:conversationId/messages**
+* **GET /v1/support/messages/:Id**
+* **PUT /v1/support/messages/:Id**
 
-The properties included in the Support Conversation object are listed below.&#x20;
+The properties included in the Support Conversation object are listed below.
 
-<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support message unique ID. </td></tr><tr><td>messages</td><td>string</td><td>The field takes the message sent.</td></tr><tr><td>conversationId</td><td>string</td><td>The unique ID of the support conversation opened for the support messages to be sent on the platform.</td></tr><tr><td>userId</td><td>string</td><td>The unique ID of the  user who sent the  support message on the platform.</td></tr><tr><td>fileUrl</td><td>string</td><td>The url of the file sent.</td></tr><tr><td>fileType</td><td>string</td><td>The type of the file sent.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support message is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support message was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support message was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support message was last updated. Used only in response messages.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support message unique ID.</td></tr><tr><td>messages</td><td>string</td><td>The field takes the message sent.</td></tr><tr><td>conversationId</td><td>string</td><td>The unique ID of the support conversation opened for the support messages to be sent on the platform.</td></tr><tr><td>userId</td><td>string</td><td>The unique ID of the user who sent the support message on the platform.</td></tr><tr><td>fileUrl</td><td>string</td><td>The url of the file sent.</td></tr><tr><td>fileType</td><td>string</td><td>The type of the file sent.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support message is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support message was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support message was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support message was last updated. Used only in response messages.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -71,19 +71,21 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-      "success": true,
-      "data": {
-          "userId": "644ace3c72fa550204925343",
-          "message": "Hello Support, Ha! Fix my issue!",
-          "fileUrl": "",
-          "fileType": "",
-          "conversationId": "644ace4472fa550204925353",
-          "read": false,
-          "createdAt": "2023-04-27T19:34:29.014Z",
-          "updatedAt": "2023-04-27T19:34:29.014Z",
-          "id:" "644ace4572fa55020492535e"
-        }
+    "success": true,
+    "data": {
+        "userId": "647df18a05647ed1d5193ba8",
+        "onModel": "User",
+        "message": "Hi, Support.",
+        "messageHtml": "<div>Hi, Support</div.",
+        "fileType": "",
+        "conversationId": "660699486386958b44c2550b",
+        "read": false,
+        "isBot": false,
+        "createdAt": "2024-08-16T11:06:28.861Z",
+        "updatedAt": "2024-08-16T11:06:28.861Z",
+        "id": "66bf32b4705ce7dc8f606f18"
     }
+}
 ```
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
@@ -94,9 +96,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name            | Type            | Description                                                       |
-| --------------- | --------------- | ----------------------------------------------------------------- |
-| Support Message | Support Message | Contains information about sent Support Message on ZAP  platform. |
+| Name            | Type            | Description                                                      |
+| --------------- | --------------- | ---------------------------------------------------------------- |
+| Support Message | Support Message | Contains information about sent Support Message on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -106,4 +108,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
