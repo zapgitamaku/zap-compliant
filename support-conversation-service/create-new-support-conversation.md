@@ -92,7 +92,7 @@ Content-Type: application/json; charset=utf-8
             "id": "668e6a979c37da92dc18232a"
         },
         "onModel": "User",
-        "type": "Chat",
+        "type": "Chat", //Email or Chat
         "emailSubject": null,
         "ticketId": null,
         "userUnreadCount": 0,
