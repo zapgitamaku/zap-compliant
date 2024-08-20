@@ -33,9 +33,9 @@ https://{hostname}/v1/priceAlerts
    "token": "6686c13708a2b18bb2acbd58",
    "duration": "recurrent", // required
    "percentageChange": 3, // optional
-   "percentageChangeType": "down" // optional
+   "percentageChangeType": "down" // optional "up" or "down"
     "amountChange": 250,  // optional
-    "amountChangeType": "above" // optional
+    "amountChangeType": "above" // optional "above" or "below"
     "recurrentDuration": 120 // should be in minutes format so 120 is 2hrs
 }
 ```
@@ -57,7 +57,7 @@ Contains information about ZAP's platform price alert.
 
 The properties included in the PriceAlert object are listed below.
 
-<table><thead><tr><th>Property</th><th width="132">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique id of the user</td></tr><tr><td>token</td><td>string</td><td>The token ticker/symbol</td></tr><tr><td>duration</td><td>string</td><td>The duration of the price alert</td></tr><tr><td>percentageChange</td><td>number</td><td>The percentage change required for token price alert</td></tr><tr><td>percentageChangeType</td><td>string</td><td>The type of the percentage change.</td></tr><tr><td>amountChange</td><td>number</td><td>The amount change required for token price alert</td></tr><tr><td>amountChangeType</td><td>string</td><td>The amount change type</td></tr><tr><td>recurrentDuration</td><td>number</td><td>The duration of the recurrent in minutes conversion</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="132">Type</th><th>Description</th></tr></thead><tbody><tr><td>userId</td><td>string</td><td>The unique id of the user</td></tr><tr><td>token</td><td>string</td><td>The token ticker/symbol</td></tr><tr><td>duration</td><td>string</td><td>The duration of the price alert</td></tr><tr><td>percentageChange</td><td>number</td><td>The percentage change required for token price alert</td></tr><tr><td>percentageChangeType</td><td>string</td><td>The type of the percentage change. Enum "up" or "down"</td></tr><tr><td>amountChange</td><td>number</td><td>The amount change required for token price alert</td></tr><tr><td>amountChangeType</td><td>string</td><td>The amount change type. Enum "above" and "below"</td></tr><tr><td>recurrentDuration</td><td>number</td><td>The duration of the recurrent in minutes conversion</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
