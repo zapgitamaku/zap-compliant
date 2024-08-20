@@ -108,6 +108,22 @@ socket.emit("supportMessage", {
 });
 ```
 
+#### supportMessageAndFile
+
+This event is emitted by the client when a user sends a new support message and file together. The server will then store the message and broadcast it to the conversation room.
+
+```javascript
+socket.emit("supportMessageAndFile", {
+  userId: <USER_ID>,
+  conversationId: <CONVERSATION_ID>,
+  fileUrl: <FILE_URL>,
+  fileType: <FILE_TYPE>,
+  message: <MESSAGE_TEXT>
+});
+```
+
+
+
 #### supportGuestMessage
 
 This event is emitted by the client when a guest sends a new support message. The server will then store the message and broadcast it to the conversation room.
@@ -133,6 +149,22 @@ socket.emit("supportGuestMessageFile", {
 });
 ```
 
+#### supportGuestMessageAndFile
+
+This event is emitted by the client when a guest sends a new support message and file. The server will then store the message and broadcast it to the conversation room.
+
+```
+socket.emit("supportGuestMessageAndFile", {
+  userId: <GUEST_ID>,
+  conversationId: <CONVERSATION_ID>,
+   fileUrl: <FILE_URL>,
+  fileType: <FILE_TYPE>,
+  message: <MESSAGE_TEXT>
+});
+```
+
+
+
 #### supportUserMessage
 
 This event is emitted by the client when a support user sends a new support message. The server will then store the message and broadcast it to the conversation room.
@@ -143,6 +175,21 @@ socket.emit("supportUserMessage", {
   conversationId: <CONVERSATION_ID>,
   message: <MESSAGE_TEXT>,
   messageHtml: <MESSAGE_TEXT_MARKDOWN>,
+});
+```
+
+#### supportUserMessageAndFile
+
+This event is emitted by the client when a support user sends a new support message with file included. The server will then store the message and broadcast it to the conversation room.
+
+```javascript
+socket.emit("supportUserMessageAndFile", {
+  userId: <USER_ID>,
+  conversationId: <CONVERSATION_ID>,
+  message: <MESSAGE_TEXT>,
+  messageHtml: <MESSAGE_TEXT_MARKDOWN>,
+  fileType: <FILE_TYPE>
+  fileUrl: <FILE_URL>
 });
 ```
 
