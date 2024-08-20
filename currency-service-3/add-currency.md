@@ -31,11 +31,11 @@ https://{hostname}/v1/priceAlerts
 {
    "userId": "6515a38ef6d2985656496941",
    "token": "6686c13708a2b18bb2acbd58",
-   "duration": "recurrent", // required
+   "duration": "recurrent", // ["recurrent" or "oneTime"]// required
    "percentageChange": 3, // optional
-   "percentageChangeType": "down" // optional "up" or "down"
+   "percentageChangeType": "down" // optional
     "amountChange": 250,  // optional
-    "amountChangeType": "above" // optional "above" or "below"
+    "amountChangeType": "above" // optional
     "recurrentDuration": 120 // should be in minutes format so 120 is 2hrs
 }
 ```
@@ -49,7 +49,7 @@ https://{hostname}/v1/priceAlerts
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>PriceAlert</td><td>Body</td><td>Required</td><td>Contains information about a new price alert on ZAP platform. userId, token, duration are required. percentageChange, percentageChangeType, amountChange, amountChangeType are optional and recurrentDuration is required if duration is recurrent.</td></tr></tbody></table>
+<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>PriceAlert</td><td>Body</td><td>Required</td><td>Contains information about a new price alert on ZAP platform. userId, token, duration ["recurrent" or "oneTime"] are required. percentageChange, percentageChangeType, amountChange, amountChangeType are optional and recurrentDuration is required if duration is recurrent.</td></tr></tbody></table>
 
 #### PriceAlert Object
 

@@ -1,8 +1,8 @@
-# Update Price Alert
+# Update Price Alert Active Status
 
-### PUT /v1/priceAlerts/update <a href="#top" id="top"></a>
+### PUT /v1/priceAlerts/active <a href="#top" id="top"></a>
 
-Allows the zap user to update a price alert for a token.
+Allows the zap user to update a price alert status for a token.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -15,7 +15,7 @@ The example below shows a request to update a price alert.
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/priceAlerts/update
+https://{hostname}/v1/priceAlerts/active
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -30,13 +30,7 @@ https://{hostname}/v1/priceAlerts/update
 ```json
 {
    "alertId": "6515a38ef6d2985656496941",
-   "token": "6686c13708a2b18bb2acbd58", // optional
-   "duration": "recurrent", // optional
-   "percentageChange": 3, // optional
-   "percentageChangeType": "down" // optional
-    "amountChange": 250,  // optional
-    "amountChangeType": "above" // optional
-    "recurrentDuration": 120 // should be in minutes format so 120 is 2hrs
+   "active": true
 }
 ```
 
@@ -49,7 +43,7 @@ https://{hostname}/v1/priceAlerts/update
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>PriceAlert</td><td>Body</td><td>Required</td><td>Contains information about a new price alert on ZAP platform. alertId is  required, rest are optional and recurrentDuration is required if duration is recurrent.</td></tr></tbody></table>
+<table><thead><tr><th width="178">Parameter</th><th width="98">Parm Type</th><th width="116">Required</th><th>Description</th></tr></thead><tbody><tr><td>PriceAlert</td><td>Body</td><td>Required</td><td>Contains information about a price alert on ZAP platform. alertId and status are  required.</td></tr></tbody></table>
 
 #### PriceAlert Object
 
