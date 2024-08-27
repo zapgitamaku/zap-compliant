@@ -38,6 +38,8 @@
   * [Create Affiliate](affiliate-service/create-affiliate.md)
   * [Fetch Affiliate Amount Earned](affiliate-service/fetch-affiliate-amount-earned.md)
   * [Fetch Affiliate By Id](affiliate-service/fetch-affiliate-by-id.md)
+* [User Activity Service](affiliate-service-1/README.md)
+  * [Fetch User Activities Log](affiliate-service-1/fetch-affiliate-by-id.md)
 * [OTP Service](otp-service/README.md)
   * [Generate OTP](otp-service/generate-otp.md)
   * [Resend OTP](otp-service/resend-otp.md)
