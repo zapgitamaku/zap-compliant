@@ -38,6 +38,8 @@ https://{hostname}/v1/activity/user/all/:userId
 
 If successful, this operation returns HTTP status code 200, with the activities log.
 
+<table><thead><tr><th width="190.33333333333331">Property</th><th width="333">Type</th><th>Description</th></tr></thead><tbody><tr><td>activity</td><td>String</td><td>The activity type and it can have a value of login, logout, changes, bankAccount, order, swap, verification, reactivate, deactivate.</td></tr><tr><td>userId</td><td>String</td><td>The unique ID for a specific user.</td></tr><tr><td>description</td><td>String</td><td>The activity description.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the activity was created.</td></tr></tbody></table>
+
 ### Sample Response <a href="#samplerequest" id="samplerequest"></a>
 
 The sample responses below shows successful completion of this operation.
