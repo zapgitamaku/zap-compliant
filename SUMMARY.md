@@ -145,6 +145,7 @@
   * [Add Conversation Rating](support-conversation-service/add-conversation-rating.md)
   * [Escalate Support Conversation](support-conversation-service/add-conversation-rating-1.md)
   * [Review Support Conversation](support-conversation-service/add-conversation-rating-2.md)
+  * [Mark Support Conversation as spam](support-conversation-service/add-conversation-rating-3.md)
 * [Support Message Service](support-message-service/README.md)
   * [Create New Support Message](support-message-service/create-new-support-message.md)
   * [Create Support User New Response Message](support-message-service/create-support-user-new-response-message.md)

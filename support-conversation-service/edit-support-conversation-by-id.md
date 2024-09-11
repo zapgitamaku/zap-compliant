@@ -18,14 +18,14 @@ The example below shows a user request to modify support conversation by convers
 https://{hostname}/v1/support/conversation/:id
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### &#x20;**Sample request body** <a href="#top" id="top"></a>
+#### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
@@ -50,15 +50,15 @@ Contains information about ZAP's platform Support Conversations.
 
 This object is used by the following operations:
 
-* #### POST /v1/support/conversations
-* #### GET /v1/support/:userId/conversations
-* #### GET /v1/support/conversation/:Id
-* #### GET  /v1/support/conversation/:Id/close
-* #### PUT  /v1/support/conversation/:Id
+* **POST /v1/support/conversations**
+* **GET /v1/support/:userId/conversations**
+* **GET /v1/support/conversation/:Id**
+* **GET /v1/support/conversation/:Id/close**
+* **PUT /v1/support/conversation/:Id**
 
-The properties included in the Support Conversation object are listed below.&#x20;
+The properties included in the Support Conversation object are listed below.
 
-<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support conversation unique ID. </td></tr><tr><td>messages</td><td>array</td><td>The field takes the array of the details of the support messages.</td></tr><tr><td>supportId</td><td>object</td><td>The details of the support user on the platform.</td></tr><tr><td>userId</td><td>object</td><td>The details of the  user who created the support conversation on the platform.</td></tr><tr><td>userUnreadCount</td><td>number</td><td>The number of unread messages sent by a user</td></tr><tr><td>supportUnreadCount</td><td>number</td><td>The number of unread messages sent by a support user</td></tr><tr><td>isClosed</td><td>boolean</td><td>The (open or closed) status of the support conversation.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support conversation  is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support conversation was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support conversation was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support conversation was last updated. Used only in response messages.</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="141">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The support conversation unique ID.</td></tr><tr><td>messages</td><td>array</td><td>The field takes the array of the details of the support messages.</td></tr><tr><td>supportId</td><td>object</td><td>The details of the support user on the platform.</td></tr><tr><td>userId</td><td>object</td><td>The details of the user who created the support conversation on the platform.</td></tr><tr><td>userUnreadCount</td><td>number</td><td>The number of unread messages sent by a user</td></tr><tr><td>supportUnreadCount</td><td>number</td><td>The number of unread messages sent by a support user</td></tr><tr><td>isClosed</td><td>boolean</td><td>The (open or closed) status of the support conversation.</td></tr><tr><td>isDeleted</td><td>boolean</td><td>The deleted status if the support conversation is deleted.</td></tr><tr><td>deletedAt</td><td>dateTime</td><td>This field shows when the support conversation was deleted. Used only in response messages.</td></tr><tr><td>createdAt</td><td>dateTime</td><td>This property displays when the support conversation was created. Used only in response messages.</td></tr><tr><td>updatedAt</td><td>dateTime</td><td>This property displays when the support conversation was last updated. Used only in response messages.</td></tr></tbody></table>
 
 ## Response <a href="#samplerequest" id="samplerequest"></a>
 
@@ -93,6 +93,7 @@ Content-Type: application/json; charset=utf-8
         "id": "644a53f19829e85215296ef2"
       }
     }
+    
 ```
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
@@ -103,9 +104,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name                 | Type                 | Description                                                        |
-| -------------------- | -------------------- | ------------------------------------------------------------------ |
-| Support Conversation | Support Conversation | Contains information about  Support Conversation on ZAP  platform. |
+| Name                 | Type                 | Description                                                      |
+| -------------------- | -------------------- | ---------------------------------------------------------------- |
+| Support Conversation | Support Conversation | Contains information about Support Conversation on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -115,4 +116,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
