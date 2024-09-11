@@ -1,8 +1,8 @@
-# Upload Verification(image)
+# Upload Verification(Url)
 
-### &#x20;<a href="#top" id="top"></a>
+### POST /v1/verifications/:verificationId/upload-url <a href="#top" id="top"></a>
 
-Allows a User to Upload Verification document on the platform.
+Allows a User to Upload Verification document with url on the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -10,12 +10,12 @@ POST
 
 ## Sample Request <a href="#samplerequest" id="samplerequest"></a>
 
-The example below shows a request to Upload a verification document.
+The example below shows a request to Upload a verification document via url
 
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```
-https://{hostname}/v1/verifications/verificationId/upload-image
+https://{hostname}/v1/verifications/verificationId/upload-url
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
@@ -29,7 +29,7 @@ https://{hostname}/v1/verifications/verificationId/upload-image
 
 ```json
 {
-      "image": file.jpg
+      "fileUrl": "data:image/png;base64,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"
 }
 ```
 
@@ -42,7 +42,7 @@ https://{hostname}/v1/verifications/verificationId/upload-image
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="218">Parameter</th><th>Parm Type</th><th width="138">Data Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>image</td><td>Body</td><td>file</td><td>Required</td><td>jpg, png, jpeg image format supported</td></tr></tbody></table>
+<table><thead><tr><th width="218">Parameter</th><th>Parm Type</th><th width="138">Data Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>fileUrl</td><td>Body</td><td>string</td><td>Required</td><td>url string</td></tr></tbody></table>
 
 #### Verification Object
 
@@ -93,22 +93,22 @@ Content-Type: application/json; charset=utf-8
 
 #### **Sample** Response Body <a href="#top" id="top"></a>
 
-<pre class="language-json"><code class="lang-json">{
+```json
+{
     "success": true,
-    "data":
-<strong>        {
-</strong>        "userId": "6910f2b1bc3c1821133a20f9",
+    "data": {
+        "userId": "6410e2b1bc3d3821133a90f9",
         "documentId": "12345asdfgh112",
         "documentType": "residence",
-        "documentUrl": "https://res.cloudinary.com/testcluster/image/upload/v16722819911/user-verification/file.jpg",
+        "documentUrl": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1679260911/user-verification/IMG_1287.jpg",
         "status": "pending",
         "comments": "",
         "createdAt": "2023-03-17T10:11:43.565Z",
         "updatedAt": "2023-03-19T22:27:55.511Z",
-        "id": "64942cdf176abaf60a2d4dd6"
+        "id": "64143cdf1760eaf60a2a4dd6"
     }
 }
-</code></pre>
+```
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
 
