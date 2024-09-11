@@ -24,7 +24,7 @@ https://{hostname}/v1/login
 'Content-Type: application/json'
 ```
 
-#### &#x20;**Sample request body** <a href="#top" id="top"></a>
+#### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
@@ -54,7 +54,7 @@ Contains information about ZAP's platform user.
 
 This object is used by the following operations:
 
-* #### POST /api/v1/users
+* **POST /api/v1/users**
 
 The properties included in the **User** object are listed below. All properties are **required** in the request message.
 
@@ -101,6 +101,32 @@ Content-Type: application/json; charset=utf-8
         },
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJaYXBVc2VyIiwiZW1haWwiOiJ1c2VyQHphcC5jb20iLCJyb2xlSWQiOiI2M2ZjOTg5ODlmZmI2M2NmNWNkZDA1ODciLCJpUEFkZHJlc3MiOlsiOjoxIl0sImVtYWlsVmVyaWZpZWQiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTI3VDE2OjU3OjA1LjkxM1oiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTI3VDE3OjA0OjEyLjIwMloiLCJkZWxldGVkQXQiOiIyMDIzLTAyLTI3VDE3OjA0OjEyLjE5OFoiLCJpZCI6IjYzZmNlMGUxOGI4ZGQ0ZTE2M2QwNmQ1YyJ9LCJpYXQiOjE2Nzc1MjA0MTYsImV4cCI6MTY3NzYwNjgxNn0.aRc7ihhVdZXRIGQtGHGjBhtXbkT_fcyZTd6oUFNz2vM"
         "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJaYXBVc2VyIiwiZW1haWwiOiJ1c2VyQHphcC5jb20iLCJyb2xlSWQiOiI2M2ZjOTg5ODlmZmI2M2NmNWNkZDA1ODciLCJpUEFkZHJlc3MiOlsiOjoxIl0sImVtYWlsVmVyaWZpZWQiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTI3VDE2OjU3OjA1LjkxM1oiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTI3VDE3OjA0OjEyLjIwMloiLCJkZWxldGVkQXQiOiIyMDIzLTAyLTI3VDE3OjA0OjEyLjE5OFoiLCJpZCI6IjYzZmNlMGUxOGI4ZGQ0ZTE2M2QwNmQ1YyJ9LCJpYXQiOjE2Nzc1MjA0MTYsImV4cCI6MTY3NzYwNjgxNn0.aRc7ihhVdZXRIGQtGHGjBhtXbkT_fcyZTd6oUFNz2vM"
+        "preferenceId": {
+                "allowTokenWatchList": true,
+                "allowPriceAlert": true,
+                "preferredMarket": {
+                    "baseCurrencyId": {
+                        "name": "Ethereum",
+                        "ticker": "ETH",
+                        "chainId": "1",
+                        "isCrypto": true,
+                        "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235469/image/ether.svg",
+                        "chainIcon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235469/image/ether.svg",
+                        "baseAmount": 0.028,
+                        "id": "646369e1e3707ef59b49abe8"
+                    },
+                    "targetCurrencyId": {
+                        "name": "Nigerian Naira",
+                        "ticker": "NGN",
+                        "isCrypto": false,
+                        "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684234892/image/naira.svg",
+                        "baseAmount": 100000,
+                        "id": "646369e1e3707ef59b49abef"
+                    },
+                    "id": "64c13d0ec5efabf7529bfa8f"
+                },
+                "id": "66bf013ab4a47c0955a312d1"
+            },
     }
 }
 ```
@@ -125,4 +151,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
