@@ -18,7 +18,7 @@ The example below shows a request to Create an Order.
 https://{hostname}/v1/orders?isGuest=false
 ```
 
-### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
@@ -31,7 +31,7 @@ https://{hostname}/v1/orders?isGuest=false
 'guest-id: 63e0f4da81979dcc3b9ee123'
 ```
 
-#### &#x20;**Sample request body for Sell orders (crypto - fiat)** <a href="#top" id="top"></a>
+#### **Sample request body for Sell orders (crypto - fiat)** <a href="#top" id="top"></a>
 
 <pre class="language-json"><code class="lang-json"><strong>{
 </strong>      "userId": "63e0f4da81979dcc3b9ee123",
@@ -39,10 +39,13 @@ https://{hostname}/v1/orders?isGuest=false
 </strong>      "marketId": "63e0fd1249be00eb05cad726",
       "refundPublicKey": "0xbf1D43fD093E76c097C869bA21fB2c7B59440521",
       "withdrawalBankAccount": "63e0f4da81979dcc3b9ee123",
+      "isFiatWalletTransaction": false,
+      "isCryptoWalletTransaction": true,
+      "walletAccountId": "670d0e7673c0b270aa379e39"
 }
 </code></pre>
 
-#### &#x20;**Sample request body for Buy orders (fiat - crypto)** <a href="#top" id="top"></a>
+#### **Sample request body for Buy orders (fiat - crypto)** <a href="#top" id="top"></a>
 
 <pre class="language-json"><code class="lang-json"><strong>{
 </strong>      "userId": "63e0f4da81979dcc3b9ee123",
@@ -50,6 +53,9 @@ https://{hostname}/v1/orders?isGuest=false
 </strong>      "marketId": "63e0fd1249be00eb05cad726",
       "refundBankAccount": "63e0f4da81979dcc3b9ee123",
       "withdrawalPublicKey": "0xbf1D43fD093E76c097C869bA21fB2c7B59440521",
+      "isFiatWalletTransaction": true,
+      "isCryptoWalletTransaction": false,
+      "walletAccountId": "670d0e7673c0b270aa379e39"
 }
 </code></pre>
 
@@ -61,6 +67,9 @@ https://{hostname}/v1/orders?isGuest=false
 </strong>      "marketId": "63e0fd1249be00eb05cad726",
       "refundPublicKey": "63e0f4da81979dcc3b9ee123",
       "withdrawalPublicKey": "0xbf1D43fD093E76c097C869bA21fB2c7B59440521",
+      "isFiatWalletTransaction": false,
+      "isCryptoWalletTransaction": true,
+      "walletAccountId": "670d0e7673c0b270aa379e39"
 }
 </code></pre>
 
@@ -68,15 +77,16 @@ https://{hostname}/v1/orders?isGuest=false
 
 ## Request Header <a href="#samplerequest" id="samplerequest"></a>
 
-| Header        | Description                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| Content-type  | application/json                                                                                              |
-| Authorization | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login |
-| guest-id      | This is the ID of the Guest                                                                                   |
+| Header               | Description                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Content-type         | application/json                                                                                                                  |
+| Authorization        | This is the ZAP API Platform authorization token, and must be sent with every API request that requires login                     |
+| guest-id             | This is the ID of the Guest                                                                                                       |
+| wallet-authorization | This is the wallet token required for a zap wallet to zap exchange transaction. It must start with Bearer. e.g Bearer eyJhbGciOi1 |
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="131">Parameter</th><th width="85">Parm Type</th><th width="99">Data Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>isGuest</td><td>Query</td><td>Boolean</td><td>Optional</td><td>Whether the order is created for a guest or authenticated user<br><br>If isGuest Is true, you can get guestId from socket guestLogin </td></tr><tr><td>Order</td><td>Body</td><td>Order</td><td>Required</td><td>Contains information about Orders on ZAP platform. userId, amount, bankDetailsId and marketId are required.</td></tr></tbody></table>
+<table><thead><tr><th width="131">Parameter</th><th width="85">Parm Type</th><th width="99">Data Type</th><th width="101">Required</th><th>Description</th></tr></thead><tbody><tr><td>isGuest</td><td>Query</td><td>Boolean</td><td>Optional</td><td>Whether the order is created for a guest or authenticated user<br><br>If isGuest Is true, you can get guestId from socket guestLogin</td></tr><tr><td>Order</td><td>Body</td><td>Order</td><td>Required</td><td>Contains information about Orders on ZAP platform. userId, amount, bankDetailsId and marketId are required.</td></tr></tbody></table>
 
 #### Market Object
 
@@ -84,11 +94,11 @@ Contains information about ZAP's platform orders.
 
 This object is used by the following operations:
 
-* #### POST /v1/orders
-* #### GET /v1/orders
-* #### GET /v1/orders/:id
-* #### PUT /v1/orders/:Id
-* #### DELETE /v1/orders/:Id
+* **POST /v1/orders**
+* **GET /v1/orders**
+* **GET /v1/orders/:id**
+* **PUT /v1/orders/:Id**
+* **DELETE /v1/orders/:Id**
 
 The properties included in the **Order** object are listed below.
 
@@ -170,6 +180,9 @@ Content-Type: application/json; charset=utf-8
         },
         "rate": 827.28482269116,
         "status": "pending",
+        "isCryptoWalletTransaction": true,
+        "isFiatWalletTransaction": false,
+        "walletAccountId": "670d0e7673c0b270aa379e39",
         "refundPublicKey": "0xbf1D43fD093E76c097C869bA21fB2c7B59440521",
         "expiresAt": "2023-07-22T09:10:23.526Z",
         "createdAt": "2023-07-22T08:40:23.540Z",
@@ -237,17 +250,15 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Headers <a href="#samplerequest" id="samplerequest"></a>
 
-
-
 | Headers      | Description      |
 | ------------ | ---------------- |
 | Content-Type | application/json |
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name  | Type  | Description                                          |
-| ----- | ----- | ---------------------------------------------------- |
-| Order | Order | Contains information about  Orders on ZAP  platform. |
+| Name  | Type  | Description                                        |
+| ----- | ----- | -------------------------------------------------- |
+| Order | Order | Contains information about Orders on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -257,4 +268,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 400  | Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you did not specify the content-type for the request, specified an incorrect content-type, or did not have the correct information in the request body (POST content). |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
