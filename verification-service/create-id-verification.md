@@ -26,14 +26,14 @@ https://{hostname}/v1/verifications?firstName=FirstName&lastName=LastName&dob=da
 &dob=dateOfBirth
 ```
 
-#### &#x20;**Sample request headers** <a href="#top" id="top"></a>
+#### **Sample request headers** <a href="#top" id="top"></a>
 
 ```
 'Content-Type: application/json'
 'Authorization: Bearer  <Bearer Token>'
 ```
 
-#### &#x20;**Sample request body** <a href="#top" id="top"></a>
+#### **Sample request body** <a href="#top" id="top"></a>
 
 ```json
 {
@@ -41,6 +41,7 @@ https://{hostname}/v1/verifications?firstName=FirstName&lastName=LastName&dob=da
        "documentType": "ID",
        "documentIdType": "vNIN"
        "documentID": "882aab23fa1099",
+       "documentUrl": "https://test.com",
 }
 ```
 
@@ -53,7 +54,7 @@ https://{hostname}/v1/verifications?firstName=FirstName&lastName=LastName&dob=da
 
 ## Request Parameters <a href="#samplerequest" id="samplerequest"></a>
 
-<table><thead><tr><th width="261">Parameter</th><th>Parm Type</th><th>Data Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>Verification</td><td>Body</td><td>Verification</td><td>Required</td><td>Contains information about  Verification data on ZAP platform userId, documentType, documentIdType and documentUrl are required.</td></tr></tbody></table>
+<table><thead><tr><th width="261">Parameter</th><th>Parm Type</th><th>Data Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>Verification</td><td>Body</td><td>Verification</td><td>Required</td><td>Contains information about Verification data on ZAP platform userId, documentType, documentIdType and documentUrl are required.</td></tr></tbody></table>
 
 #### Verification Object
 
@@ -61,12 +62,12 @@ Contains information about ZAP's platform user verification data.
 
 This object is used by the following operations:
 
-* #### POST /v1/verifications
-* #### GET /v1/verifications
-* #### GET /v1/verifications/:id
-* #### GET /v1/verifications/userid/:id
-* #### PUT /v1/verifications/:id
-* #### DELETE /v1/verifications/:id
+* **POST /v1/verifications**
+* **GET /v1/verifications**
+* **GET /v1/verifications/:id**
+* **GET /v1/verifications/userid/:id**
+* **PUT /v1/verifications/:id**
+* **DELETE /v1/verifications/:id**
 
 The properties included in the **Verifications** object are listed below.
 
@@ -129,9 +130,9 @@ Content-Type: application/json; charset=utf-8
 
 ### Response Body <a href="#samplerequest" id="samplerequest"></a>
 
-| Name         | Type         | Description                                                 |
-| ------------ | ------------ | ----------------------------------------------------------- |
-| Verification | verification | Contains information about  Verifications on ZAP  platform. |
+| Name         | Type         | Description                                               |
+| ------------ | ------------ | --------------------------------------------------------- |
+| Verification | verification | Contains information about Verifications on ZAP platform. |
 
 ### Error Codes <a href="#samplerequest" id="samplerequest"></a>
 
@@ -143,4 +144,3 @@ If the call is unsuccessful an error code/message is returned. One or more examp
 | 401  | Unauthorized                                                                                                                                                                                                                                                                                                                      |
 | 404  | Not Found: Returned if the request                                                                                                                                                                                                                                                                                                |
 | 500  | An error occured processing the request                                                                                                                                                                                                                                                                                           |
-
