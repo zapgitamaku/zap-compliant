@@ -1,8 +1,8 @@
 # Delete Wallet Details By Id
 
-### DELETE /v1/walletDetails/:id <a href="#top" id="top"></a>
+### DELETE /v1/walletDetails/:userId/:walletId <a href="#top" id="top"></a>
 
-Allows the Site Admin to erase a particular wallet details of a user from the platform.
+Allows the a user to delete a particular wallet details from the platform.
 
 #### HTTP Method <a href="#top" id="top"></a>
 
@@ -15,7 +15,7 @@ The example below shows a request to delete a specified user.
 #### **Sample request** URL <a href="#top" id="top"></a>
 
 ```json
-https://{hostname}/v1/walletDetails/:id
+https://{hostname}/v1/walletDetails/:userId/:walletId
 ```
 
 #### **Sample request headers** <a href="#top" id="top"></a>
