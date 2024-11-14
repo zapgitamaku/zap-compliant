@@ -114,7 +114,7 @@
   * [Validate Wallet Address](order-service/validate-wallet-address.md)
   * [Get Unsigned Transaction Object](order-service/validate-wallet-address-1.md)
   * [Get Balance of tokens](order-service/validate-wallet-address-2.md)
-  * [Get Supported Tokens](order-service/validate-wallet-address-3.md)
+  * [Get Supported Chains](order-service/validate-wallet-address-3.md)
   * [Process Order by Id](order-service/process-order-by-id.md)
   * [Logic for Expired Order by Id](order-service/logic-for-expired-order-by-id.md)
   * [Delete Order by Id](order-service/delete-order-by-id.md)

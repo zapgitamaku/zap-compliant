@@ -125,7 +125,18 @@ Content-Type: application/json; charset=utf-8
                     },
                     "id": "64c13d0ec5efabf7529bfa8f"
                 },
-                "id": "66bf013ab4a47c0955a312d1"
+                "preferredAmount": 0.3,
+                "preferredBankAccount": {
+                    "bankId": {
+                        "name": "GTBANK PLC",
+                        "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1683643352/image/1683643352356.png",
+                        "id": "64atd58f177653c33d9a42a2"
+                    },
+                    "accountNumber": "0013974600",
+                    "accountName": "John Doe",
+                    "id": "6595e2edd23147d967740064"
+                },
+                "id": "66bf313ab4a47c9955a312d1"
             },
     }
 }
