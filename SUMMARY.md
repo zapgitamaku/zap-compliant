@@ -7,6 +7,8 @@
   * [Error](quick-start/error.md)
 * [USER Service](user-service/README.md)
   * [Create User](user-service/create-user.md)
+  * [Complete Onboard User (New flow)](user-service/create-user-1.md)
+  * [Get all signup channels](user-service/create-user-2.md)
   * [Log In User](user-service/log-in-user.md)
   * [Verify OTP Login](user-service/log-in-user-1.md)
   * [OTP Login](user-service/log-in-user-2.md)
