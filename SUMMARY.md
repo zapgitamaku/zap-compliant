@@ -8,6 +8,8 @@
 * [USER Service](user-service/README.md)
   * [Create User](user-service/create-user.md)
   * [Log In User](user-service/log-in-user.md)
+  * [Verify OTP Login](user-service/log-in-user-1.md)
+  * [OTP Login](user-service/log-in-user-2.md)
   * [Google Log In](user-service/google-log-in.md)
   * [Google Log In- App](user-service/google-log-in-app.md)
   * [Apple Log In- App](user-service/apple-log-in-app.md)
