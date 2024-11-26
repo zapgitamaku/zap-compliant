@@ -54,48 +54,17 @@ Content-Type: application/json; charset=utf-8
 ```json
 {
     "success": true,
-    "data": {
-        "1": {
+    "data": [
+        {
             "name": "Ethereum",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235469/image/ether.svg"
+            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235469/image/ether.svg",
+            "chainId": "1"
         },
-        "10": {
+        {
             "name": "Optimism",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753080/icons/1712753081087.svg"
+            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753080/icons/1712753081087.svg",
+            "chainId": "10"
         },
-        "56": {
-            "name": "BSC",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235730/image/bnb.svg"
-        },
-        "137": {
-            "name": "Polygon",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712642422/icons/1712642421711.svg"
-        },
-        "666": {
-            "name": "Solana",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1704295321/icons/1704295319104.svg"
-        },
-        "777": {
-            "name": "Monero",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1699028552/icons/1699028551057.svg"
-        },
-        "888": {
-            "name": "Tron",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1692787050/icons/1692787049540.svg"
-        },
-        "999": {
-            "name": "Bitcoin",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1684235118/image/btc.svg"
-        },
-        "8453": {
-            "name": "Base",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712928493/icons/1712928493321.svg"
-        },
-        "42161": {
-            "name": "Arbitrum One",
-            "icon": "https://res.cloudinary.com/dukdbbrbc/image/upload/v1712753521/icons/1712753522617.svg"
-        }
-    }
 }
 ```
 
